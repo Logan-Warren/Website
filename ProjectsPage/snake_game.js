@@ -78,7 +78,7 @@ function collision(head) {
   );
 }
 
-document.addEventListener("keydown", (event) => {
+function handleKeyDown(event) {
   if (event.code === "Space") {
     if (gameState === "start" || gameState === "gameover") {
       startGame();
@@ -98,7 +98,7 @@ document.addEventListener("keydown", (event) => {
       dy = 0;
     }
   }
-});
+}
 
 function startGame() {
   gameState = "playing";
@@ -106,6 +106,7 @@ function startGame() {
   dx = gridSize;
   dy = 0;
   placeFood();
+  document.addEventListener("keydown", handleKeyDown); // Add this line
 }
 
 update();
