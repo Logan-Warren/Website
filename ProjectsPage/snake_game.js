@@ -36,13 +36,12 @@ function draw() {
   context.fillStyle = 'white';
   context.fillRect(0, 0, canvas.width, canvas.height);
 
-if (gameState === "start") {
+  if (gameState === "start") {
     drawText("Press SPACE to Start", "20px Arial", "black", canvas.width / 2, canvas.height / 2);
   } else if (gameState === "gameover") {
     drawText("Game Over", "20px Arial", "black", canvas.width / 2, canvas.height / 2);
     drawText("Press SPACE to Restart", "20px Arial", "black", canvas.width / 2, canvas.height / 2 + 30);
   }
-
 
   context.fillStyle = 'green';
   snake.forEach(({ x, y }) => {
@@ -61,6 +60,7 @@ function placeFood() {
     y: Math.floor(Math.random() * canvas.height / gridSize) * gridSize,
   };
 }
+
 function drawText(text, font, color, x, y) {
   context.font = font;
   context.fillStyle = color;
@@ -84,20 +84,22 @@ document.addEventListener("keydown", (event) => {
       startGame();
     }
   } else {
-  if (event.key === 'ArrowUp' && dy === 0) {
-    dx = 0;
-    dy = -gridSize;
-  } else if (event.key === 'ArrowDown' && dy === 0) {
-    dx = 0;
-    dy = gridSize;
-  } else if (event.key === 'ArrowLeft' && dx === 0) {
-    dx = -gridSize;
-    dy = 0;
-  } else if (event.key === 'ArrowRight' && dx === 0) {
-    dx = gridSize;
-    dy = 0;
+    if (event.key === 'ArrowUp' && dy === 0) {
+      dx = 0;
+      dy = -gridSize;
+    } else if (event.key === 'ArrowDown' && dy === 0) {
+      dx = 0;
+      dy = gridSize;
+    } else if (event.key === 'ArrowLeft' && dx === 0) {
+      dx = -gridSize;
+      dy = 0;
+    } else if (event.key === 'ArrowRight' && dx === 0) {
+      dx = gridSize;
+      dy = 0;
+}
   }
 });
+
 function startGame() {
   gameState = "playing";
   snake = [{ x: gridSize * 5, y: gridSize * 5 }];
@@ -105,5 +107,6 @@ function startGame() {
   dy = 0;
   placeFood();
 }
+
 update();
 draw();
