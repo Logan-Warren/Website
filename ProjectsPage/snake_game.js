@@ -6,8 +6,12 @@ let snake = [{ x: gridSize * 5, y: gridSize * 5 }];
 let dx = gridSize;
 let dy = 0;
 let food = { x: gridSize * 10, y: gridSize * 10 };
+let gameState = "start"; // Add this variable to track the game state
 
 function update() {
+if (gameState === "start" || gameState === "gameover") {
+    return
+
   const head = { x: snake[0].x + dx, y: snake[0].y + dy };
 
   snake.unshift(head);
@@ -18,10 +22,8 @@ function update() {
   }
 
   if (collision(head)) {
-    alert('Game Over!');
-    snake = [{ x: gridSize * 5, y: gridSize * 5 }];
-    dx = gridSize;
-    dy = 0;
+    gameState = "gameover";
+    return;
   }
 
   setTimeout(() => {
@@ -32,6 +34,14 @@ function update() {
 function draw() {
   context.fillStyle = 'white';
   context.fillRect(0, 0, canvas.width, canvas.height);
+
+if (gameState === "start") {
+    drawText("Press SPACE to Start", "20px Arial", "black", canvas.width / 2, canvas.height / 2);
+  } else if (gameState === "gameover") {
+    drawText("Game Over", "20px Arial", "black", canvas.width / 2, canvas.height / 2);
+    drawText("Press SPACE to Restart", "20px Arial", "black", canvas.width / 2, canvas.height / 2 + 30);
+  }
+
 
   context.fillStyle = 'green';
   snake.forEach(({ x, y }) => {
@@ -50,6 +60,12 @@ function placeFood() {
     y: Math.floor(Math.random() * canvas.height / gridSize) * gridSize,
   };
 }
+function drawText(text, font, color, x, y) {
+  context.font = font;
+  context.fillStyle = color;
+  context.textAlign = "center";
+  context.fillText(text, x, y);
+}
 
 function collision(head) {
   return (
@@ -61,7 +77,12 @@ function collision(head) {
   );
 }
 
-document.addEventListener('keydown', (event) => {
+document.addEventListener("keydown", (event) => {
+  if (event.code === "Space") {
+    if (gameState === "start" || gameState === "gameover") {
+      startGame();
+    }
+  } else {
   if (event.key === 'ArrowUp' && dy === 0) {
     dx = 0;
     dy = -gridSize;
@@ -76,6 +97,12 @@ document.addEventListener('keydown', (event) => {
     dy = 0;
   }
 });
-
+function startGame() {
+  gameState = "playing";
+  snake = [{ x: gridSize * 5, y: gridSize * 5 }];
+  dx = gridSize;
+  dy = 0;
+  placeFood();
+}
 update();
 draw();
