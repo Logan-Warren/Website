@@ -96,7 +96,7 @@ document.addEventListener("keydown", (event) => {
     } else if (event.key === 'ArrowRight' && dx === 0) {
       dx = gridSize;
       dy = 0;
-}
+    }
   }
 });
 
