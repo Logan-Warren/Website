@@ -25,13 +25,16 @@ function update() {
 
   if (collision(head)) {
     gameState = "gameover";
-    requestAnimationFrame(update);
-    return;
   }
 
   setTimeout(() => {
     requestAnimationFrame(update);
   }, snakeSpeed);
+}
+
+function gameLoop() {
+  draw();
+  requestAnimationFrame(gameLoop);
 }
 
 document.addEventListener("keydown", (event) => {
@@ -57,4 +60,4 @@ document.addEventListener("keydown", (event) => {
 });
 
 update();
-draw();
+gameLoop();
