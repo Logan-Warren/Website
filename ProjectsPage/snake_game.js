@@ -10,7 +10,6 @@ let gameState = "start";
 
 function update() {
   if (gameState === "start" || gameState === "gameover") {
-    requestAnimationFrame(update);
     return;
   }
 
@@ -25,12 +24,30 @@ function update() {
 
   if (collision(head)) {
     gameState = "gameover";
+    return;
   }
 
   setTimeout(() => {
     requestAnimationFrame(update);
   }, snakeSpeed);
 }
+
+function gameLoop() {
+  draw();
+  requestAnimationFrame(gameLoop);
+}
+
+function startGame() {
+  gameState = "playing";
+  snake = [{ x: gridSize * 5, y: gridSize * 5 }];
+  dx = gridSize;
+  dy = 0;
+  placeFood();
+  update(); // Call update() here to start the game loop when the game state changes to "playing"
+}
+
+gameLoop(); // Call gameLoop() to start rendering the game
+
 
 function draw() {
   context.fillStyle = 'white';
