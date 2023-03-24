@@ -6,7 +6,7 @@ let snake = [{ x: gridSize * 5, y: gridSize * 5 }];
 let dx = gridSize;
 let dy = 0;
 let food = { x: gridSize * 10, y: gridSize * 10 };
-let gameState = "start"; // Add this variable to track the game state
+let gameState = "start";
 
 function update() {
   if (gameState === "start" || gameState === "gameover") {
