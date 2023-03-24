@@ -9,9 +9,10 @@ let food = { x: gridSize * 10, y: gridSize * 10 };
 let gameState = "start"; // Add this variable to track the game state
 
 function update() {
-if (gameState === "start" || gameState === "gameover") {
+  if (gameState === "start" || gameState === "gameover") {
     return;
-}
+  }
+
   const head = { x: snake[0].x + dx, y: snake[0].y + dy };
 
   snake.unshift(head);
