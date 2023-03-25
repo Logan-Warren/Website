@@ -1,13 +1,15 @@
 const startButton = document.getElementById("startButton");
 const stopButton = document.getElementById("stopButton");
+const toggleKeypointsButton = document.getElementById("toggleKeypointsButton");
 const video = document.getElementById("video");
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-const handpose = require("@tensorflow-models/handpose");
+const handposeModel = handpose;
 var delay = 2000;
 let isCameraOn = false;
+let showKeypoints = true;
 
-export async function setupCamera() {
+async function setupCamera() {
   const stream = await navigator.mediaDevices.getUserMedia({
     video: { width: 640, height: 480 },
     audio: false,
@@ -20,8 +22,8 @@ export async function setupCamera() {
   });
 }
 
-export async function detectHands() {
-  const model = await handpose.load();
+async function detectHands() {
+  const model = await handposeModel.load();
   video.play();
 
   const keypointsDiv = document.getElementById("keypoints");
@@ -32,21 +34,24 @@ export async function detectHands() {
 
     keypointsDiv.innerHTML = ""; // Clear previous keypoints
 
-    for (let i = 0; i < predictions.length; i++) {
-      const keypoints = predictions[i].landmarks;
+    if (showKeypoints) {
+      for (let i = 0; i < predictions.length; i++) {
+        const keypoints = predictions[i].landmarks;
 
-      // Display keypoints below the camera
-      const keypointsText = `Hand ${i + 1}: ${JSON.stringify(keypoints)}`;
-      const keypointsElement = document.createElement("pre");
-      keypointsElement.textContent = keypointsText;
-      keypointsDiv.appendChild(keypointsElement);
+        // Display keypoints below the camera
+        const keypointsText = `Hand ${i + 1}: ${JSON.stringify(keypoints)}`;
+        const keypointsElement = document.createElement("pre");
+        keypointsElement.textContent = keypointsText;
+        keypointsDiv.appendChild(keypointsElement);
 
-      // Draw dots at each keypoint
-      for (let j = 0; j < keypoints.length; j++) {
-        ctx.beginPath();
-        ctx.arc(keypoints[j][0], keypoints[j][1], 5, 0, 2 * Math.PI);
-        ctx.fillStyle = "red";
-        ctx.fill();
+        // Draw dots at each keypoint
+        for (let j = 0; j < keypoints.length; j++) {
+         
+          ctx.beginPath();
+          ctx.arc(keypoints[j][0], keypoints[j][1], 5, 0, 2 * Math.PI);
+          ctx.fillStyle = "red";
+          ctx.fill();
+        }
       }
     }
 
@@ -61,12 +66,12 @@ export async function detectHands() {
   detect();
 }
 
-export function setDelay(x) {
+function setDelay(x) {
   delay = x;
   console.log(delay);
 }
 
-export async function main() {
+async function main() {
   await setupCamera();
 
   startButton.addEventListener("click", () => {
@@ -83,7 +88,13 @@ export async function main() {
     stopButton.disabled = true;
     video.style.display = "none";
   });
-  
+
+  toggleKeypointsButton.addEventListener("click", () => {
+    showKeypoints = !showKeypoints;
+    toggleKeypointsButton.textContent = showKeypoints
+      ? "Hide Keypoints"
+      : "Show Keypoints";
+  });
 }
 
 main();
