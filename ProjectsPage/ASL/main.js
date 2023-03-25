@@ -50,10 +50,10 @@ async function detectHands() {
 
         // Draw dots at each keypoint
         for (let j = 0; j < keypoints.length; j++) {
-          ctx.beginPath();
-          ctx.arc(keypoints[j][0], keypoints[j][1], 5, 0, 2 * Math.PI);
-          ctx.fillStyle = "red";
-          ctx.fill();
+          keypointsCtx.beginPath();
+          keypointsCtx.arc(keypoints[j][0], keypoints[j][1], 5, 0, 2 * Math.PI);
+          keypointsCtx.fillStyle = "red";
+          keypointsCtx.fill();
         }
       }
     }
@@ -84,6 +84,7 @@ async function main() {
     stopButton.disabled = false;
     video.style.display = "none";
     canvas.style.display = "block";
+    keypointsCanvas.style.display = "block";
     detectHands();
   });
 
@@ -93,6 +94,7 @@ async function main() {
     stopButton.disabled = true;
     video.style.display = "none";
     canvas.style.display = "none";
+    keypointsCanvas.style.display = "none";
   });
 
   toggleKeypointsButton.addEventListener("click", () => {
@@ -104,3 +106,4 @@ async function main() {
 }
 
 main();
+
