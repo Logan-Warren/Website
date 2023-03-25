@@ -3,17 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CSS to HTML Example with Hand Detection</title>
+<title>Hand Detection Example</title>
 <!-- Import TensorFlow.js -->
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.12.0"></script>
 <!-- Import Hand Detection model -->
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose@0.0.7"></script>
 <style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.video-container {
+  position: relative;
+  display: inline-block;
+}
+
 canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
   border: 1px solid black;
 }
-video {
-  position: absolute;
+
+button {
+  background-color: #61dafb;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none;
+}
+
+button:hover {
+  background-color: #4da9e7;
+}
+
+button:active {
+  background-color: #3b8dbd;
+}
+
+button:disabled {
+  background-color: #a9a9a9;
+  cursor: not-allowed;
 }
 </style>
 </head>
@@ -23,9 +67,10 @@ video {
     <button id="stopButton" disabled>Stop Camera</button>
     <button id="toggleKeypointsButton">Toggle Keypoints</button>
   </div>
-  <video id="video" width="640" height="480" style="display: none;"></video>
-  <canvas id="canvas" width="640" height="480"></canvas>
-  <div id="keypoints"></div>
+  <div class="video-container">
+    <video id="video" width="640" height="480" style="display: none;"></video>
+    <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+  </div>
   <script src="main.js"></script>
 </body>
 </html>
