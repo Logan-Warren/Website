@@ -2,12 +2,14 @@ const startButton = document.getElementById("startButton");
 const stopButton = document.getElementById("stopButton");
 const toggleKeypointsButton = document.getElementById("toggleKeypointsButton");
 const video = document.getElementById("video");
-const canvas = document.getElementById("canvas");
+const canvas = document.getElementById("videoCanvas");
 const ctx = canvas.getContext("2d");
-const handposeModel = handpose;
-var delay = 2000;
+const keypointsCanvas = document.getElementById("keypointsCanvas");
+const keypointsCtx = keypointsCanvas.getContext("2d");
+
 let isCameraOn = false;
 let showKeypoints = true;
+var delay = 2000;
 
 async function setupCamera() {
   const stream = await navigator.mediaDevices.getUserMedia({
@@ -21,11 +23,9 @@ async function setupCamera() {
     };
   });
 }
-const keypointsCanvas = document.getElementById("keypointsCanvas");
-const keypointsCtx = keypointsCanvas.getContext("2d");
 
 async function detectHands() {
-  const model = await handposeModel.load();
+  const model = await handpose.load();
   video.play();
 
   function drawVideo() {
@@ -38,7 +38,7 @@ async function detectHands() {
   }
 
   drawVideo();
-  
+
   async function detect() {
     const predictions = await model.estimateHands(video);
 
@@ -68,7 +68,6 @@ async function detectHands() {
 
   detect();
 }
-
 
 function setDelay(x) {
   delay = x;
@@ -106,4 +105,3 @@ async function main() {
 }
 
 main();
-
