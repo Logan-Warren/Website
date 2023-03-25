@@ -6,7 +6,7 @@ const ctx = canvas.getContext("2d");
 let isCameraOn = false;
 const githubUsername = 'LoganWarren';
 const githubRepo = 'LoganWarren.github.io';
-const githubPAT = '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';
+const githubPAT = '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';
 const keypointsFilename = 'keypoints.csv';
 
 async function updateCSVFileInGitHub(csvContent) {
