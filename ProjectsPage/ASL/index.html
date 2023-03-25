@@ -10,16 +10,18 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: black;
+            color: #FFFF00;
         }
         .title-bar {
-            background-color: #4CAF50;
+            background-color: #006400;
             color: white;
             text-align: center;
             padding: 15px;
             font-size: 24px;
         }
         .name-section {
-            background-color: #F5F5F5;
+            background-color: #000000;
             padding: 20px;
             display: flex;
             justify-content: space-around;
@@ -30,27 +32,30 @@
             flex-wrap: wrap;
             justify-content: space-around;
             padding: 20px;
-            background-color: #E0E0E0;
+            background-color: #000000;
         }
         .pattern-paragraph, .image-container {
             width: 45%;
             margin-bottom: 20px;
         }
+        h2 {
+            color: #0000FF;
+        }
         .run-model-button {
             display: block;
-            width: 200px;
-            height: 50px;
-            background-color: #2196F3;
+            width: 250px;
+            height: 60px;
+            background-color: #006400;
             color: white;
-            font-size: 18px;
+            font-size: 20px;
             text-align: center;
-            line-height: 50px;
+            line-height: 60px;
             margin: 20px auto;
             border-radius: 4px;
             text-decoration: none;
         }
         .run-model-button:hover {
-            background-color: #0D8BF2;
+            background-color: #004C00;
             cursor: pointer;
         }
     </style>
@@ -58,13 +63,14 @@
 <body>
     <div class="title-bar">ASL Model</div>
     <div class="name-section">
-        <span>Logan Warren</span>
-        <span>Xavier Bear</span>
-        <span>Chris Landingin</span>
-        <span>Brayden Nguyen</span>
+        <span>Person 1</span>
+        <span>Person 2</span>
+        <span>Person 3</span>
+        <span>Person 4</span>
     </div>
     <div class="content-section">
         <div class="pattern-paragraph">
+            <h2>ASL Model Motivation</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus condimentum libero, et cursus nulla egestas vitae.</p>
         </div>
         <div class="image-container">
@@ -74,6 +80,7 @@
             <img src="asl-clipart-ASL.png" alt="Image 2" width="100%" height="auto">
         </div>
         <div class="pattern-paragraph">
+            <h2>ASL Model Description</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus condimentum libero, et cursus nulla egestas vitae.</p>
         </div>
     </div>
