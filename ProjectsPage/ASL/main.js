@@ -28,9 +28,9 @@ async function detectHands() {
 
   async function detect() {
     const predictions = await model.estimateHands(video);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.drawImage(video, 0, 0, video.width, video.height);
+//    ctx.drawImage(video, 0, 0, video.width, video.height);
 
     if (showKeypoints) {
       for (let i = 0; i < predictions.length; i++) {
