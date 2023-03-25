@@ -14,19 +14,19 @@ async function updateCSVFileInGitHub(csvContent) {
   const commitMessage = 'Update keypoints.csv';
 
   // Fetch the file from the repository
-  const getFileResponse = await fetch(`https://api.github.com/repos/${LoganWarren}/${LoganWarren.github.io}/contents/${keypoints.csv}`, {
+  const getFileResponse = await fetch(`https://api.github.com/repos/LoganWarren/LoganWarren.github.io/contents/keypoints.csv`, {
     method: 'GET',
     headers: {
-      'Authorization': `token ${githubPAT}`
+      'Authorization': `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`
     }
   });
   const getFileData = await getFileResponse.json();
 
   // Update the file in the repository
-  const updateFileResponse = await fetch(`https://api.github.com/repos/${LoganWarren}/${LoganWarren.git.io}/contents/${keypoints.csv}`, {
+  const updateFileResponse = await fetch(`https://api.github.com/repos/LoganWarren/LoganWarren.git.io/contents/keypoints.csv`, {
     method: 'PUT',
     headers: {
-      'Authorization': `token ${githubPAT}`
+      'Authorization': `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`
     },
     body: JSON.stringify({
       message: commitMessage,
