@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,23 +9,23 @@
 <!-- Import Hand Detection model -->
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose@0.0.7"></script>
 <style>
- 
 canvas {
-border: 1px solid black;
+  border: 1px solid black;
 }
 video {
-position: absolute;
+  position: absolute;
 }
 </style>
 </head>
 <body>
-      <button id="startButton">Start Camera</button>
-      <button id="stopButton" disabled>Stop Camera</button>
-    </div>
-    <video id="video" width="640" height="480" style="display: none;"></video>
-    <canvas id="canvas" width="640" height="480"></canvas>
-    <div id="keypoints"></div>
+  <div>
+    <button id="startButton">Start Camera</button>
+    <button id="stopButton" disabled>Stop Camera</button>
+    <button id="toggleKeypointsButton">Toggle Keypoints</button>
   </div>
-<script src="main.js"></script>
+  <video id="video" width="640" height="480" style="display: none;"></video>
+  <canvas id="canvas" width="640" height="480"></canvas>
+  <div id="keypoints"></div>
+  <script src="main.js"></script>
 </body>
 </html>
