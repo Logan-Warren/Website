@@ -23,14 +23,22 @@ async function setupCamera() {
 }
 
 async function detectHands() {
-   const model = await handposeModel.load();
+  const model = await handposeModel.load();
   video.play();
+
+  function drawVideo() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(video, 0, 0, video.width, video.height);
+
+    if (isCameraOn) {
+      requestAnimationFrame(drawVideo);
+    }
+  }
+
+  drawVideo();
 
   async function detect() {
     const predictions = await model.estimateHands(video);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    ctx.drawImage(video, 0, 0, video.width, video.height);
 
     if (showKeypoints) {
       for (let i = 0; i < predictions.length; i++) {
@@ -47,13 +55,16 @@ async function detectHands() {
     }
 
     if (isCameraOn) {
-      // Call the detect function again after a 2-second buffer
-      
+      // Call the detect function again after a delay for keypoint detection
+      setTimeout(() => {
+        detect();
+      }, delay);
     }
   }
 
   detect();
 }
+
 
 function setDelay(x) {
   delay = x;
