@@ -45,7 +45,7 @@
             display: block;
             width: 250px;
             height: 60px;
-            background-image: linear-gradient(to top right, #0000ff 50%, #b3b300 50%);
+            background-image: linear-gradient(to top right, #006400 50%, #b3b300 50%);
             color: white;
             font-size: 20px;
             text-align: center;
@@ -53,13 +53,15 @@
             margin: 20px auto;
             border-radius: 4px;
             text-decoration: none;
+            text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
         }
         .run-model-button:hover {
             background-image: linear-gradient(to top right, #004C00 50%, #a6a600 50%);
             cursor: pointer;
         }
         .name {
-            margin: 0 10px;
+            margin: 0 5px;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -84,9 +86,10 @@
         </div>
         <div class="pattern-paragraph">
             <h2>ASL Model Description</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus condimentum libero, et cursus nulla egestas vitae.</p>
-                </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus condimentum libero, et cursus nulla egestas vitae.</p>
+        </div>
     </div>
     <a href="asl.html" class="run-model-button">Run Model</a>
 </body>
 </html>
+
