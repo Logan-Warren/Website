@@ -21,6 +21,8 @@ async function setupCamera() {
     };
   });
 }
+const keypointsCanvas = document.getElementById("keypointsCanvas");
+const keypointsCtx = keypointsCanvas.getContext("2d");
 
 async function detectHands() {
   const model = await handposeModel.load();
@@ -36,9 +38,11 @@ async function detectHands() {
   }
 
   drawVideo();
-
+  
   async function detect() {
     const predictions = await model.estimateHands(video);
+
+    keypointsCtx.clearRect(0, 0, keypointsCanvas.width, keypointsCanvas.height);
 
     if (showKeypoints) {
       for (let i = 0; i < predictions.length; i++) {
