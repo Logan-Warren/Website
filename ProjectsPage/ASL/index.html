@@ -45,7 +45,7 @@
             display: block;
             width: 250px;
             height: 60px;
-            background-color: #006400;
+            background-image: linear-gradient(to top right, #006400 50%, #b3b300 50%);
             color: white;
             font-size: 20px;
             text-align: center;
@@ -55,18 +55,21 @@
             text-decoration: none;
         }
         .run-model-button:hover {
-            background-color: #004C00;
+            background-image: linear-gradient(to top right, #004C00 50%, #a6a600 50%);
             cursor: pointer;
+        }
+        .name {
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
     <div class="title-bar">ASL Model</div>
     <div class="name-section">
-        <span>Person 1</span>
-        <span>Person 2</span>
-        <span>Person 3</span>
-        <span>Person 4</span>
+        <span class="name">Logan Warren</span>
+        <span class="name">Xavier Bear</span>
+        <span class="name">Chris Landingin</span>
+        <span class="name">Brayden Nguyen</span>
     </div>
     <div class="content-section">
         <div class="pattern-paragraph">
@@ -82,7 +85,7 @@
         <div class="pattern-paragraph">
             <h2>ASL Model Description</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed cursus condimentum libero, et cursus nulla egestas vitae.</p>
-        </div>
+                </div>
     </div>
     <a href="asl.html" class="run-model-button">Run Model</a>
 </body>
