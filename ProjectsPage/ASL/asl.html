@@ -25,11 +25,10 @@ body {
   display: inline-block;
 }
 
-canvas {
+canvas, video {
   position: absolute;
   top: 0;
   left: 0;
-  border: 1px solid black;
 }
 
 button {
@@ -69,7 +68,8 @@ button:disabled {
   </div>
   <div class="video-container">
     <video id="video" width="640" height="480" style="display: none;"></video>
-    <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+    <canvas id="videoCanvas" width="640" height="480" style="display: none;"></canvas>
+    <canvas id="keypointsCanvas" width="640" height="480"></canvas>
   </div>
   <script src="main.js"></script>
 </body>
