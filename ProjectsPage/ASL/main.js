@@ -17,16 +17,16 @@ async function updateCSVFileInGitHub(csvContent) {
   const getFileResponse = await fetch(`https://api.github.com/repos/LoganWarren/LoganWarren.github.io/contents/keypoints.csv`, {
     method: 'GET',
     headers: {
-      'Authorization': `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`
+      'Authorization': `token ${githubPAT}`
     }
   });
   const getFileData = await getFileResponse.json();
 
   // Update the file in the repository
-  const updateFileResponse = await fetch(`https://api.github.com/repos/LoganWarren/LoganWarren.git.io/contents/keypoints.csv`, {
+  const updateFileResponse = await fetch(`https://api.github.com/repos/LoganWarren/LoganWarren.github.io/contents/keypoints.csv`, {
     method: 'PUT',
     headers: {
-      'Authorization': `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`
+      'Authorization': `token ${githubPAT}`
     },
     body: JSON.stringify({
       message: commitMessage,
