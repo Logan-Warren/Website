@@ -55,6 +55,7 @@ h1 {
 }
 /* Update the styles for .recent-project-gif in your CSS file */
 .recent-project-gif {
+        background-image: url('./Images/Model.gif');
     width: 200%; /* Adjust this value if necessary */
     display: flex;
     justify-content: flex-end; /* Change from 'center' to 'flex-end' */
