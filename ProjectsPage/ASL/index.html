@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASL MODEL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .title-bar {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            position: relative;
+        }
+        .main-title {
+            font-size: 30px; /* Updated font size */
+            color:#FFFFFF
+        }
+        .SH-title{
+            font-size: 25px;
+            color:#b3b300
+        }
+        .nav-links {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 12px;
+        }
+        .award-text {
+            text-align: center;
+            color: #FFD700;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .name-section {
+            background-color: #383837;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .content-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 0px;
+            background-color: #5E5E5C;
+            flex: 1;
+        }
+        .pattern-paragraph, .image-container {
+            width: 45%;
+            margin-bottom: 0px;
+        }
+        h2 {
+            color: #000000;
+        }
+        .run-model-button {
+            display: block;
+            width: 250px;
+            height: 60px;
+            background-image: linear-gradient(to top right, #057840 50%, #057840 50%);
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 60px;
+            margin: 20px auto;
+            border-radius: 4px;
+            text-decoration: none;
+            border: 2px solid white;
+        }
+        .name {
+            margin: 0 5px;
+            text-decoration: underline;
+        }
+        .outlined-paragraph {
+            border: 2px solid #b3b300;
+            border-radius: 0px;
+            padding: 10px;
+        }
+        .image-container img {
+            width: 80%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="title-bar">
+        <h1 class="main-title">ASL Model</h1> <!-- Added class to target only this text -->        
+        <h2 class="SH-title"> STEELHACKS 2023 First Place Overall Winner</h2>
+        
+        <div class="nav-links">
+            <a href="\index.html" class="nav-link">Home</a>
+            <a href="\ProjectsPage\project.html" class="nav-link">Projects</a>
+        </div>
+    </div>
+    <div class="name-section">
+        <span class="name">Logan Warren</span>
+        <span class="name">Xavier Bear</span>
+        <span class="name">Chris Landingin</span>
+        <span class="name">Brayden Nguyen</span>
+    </div>
+    <div class="content-section">
+        <div class="pattern-paragraph">
+            <h2>ASL Model Motivation</h2>
+           
+
+            <p class="outlined-paragraph">The motivation for our ASL Model project is to provide a more accessible and 
+                efficient means of communication for individuals who are deaf or hard of hearing. American Sign Language (ASL) 
+                is a complex language that uses hand gestures and facial expressions to convey meaning. However, not everyone is 
+                proficient in ASL, which can create communication barriers for those who rely on it. By developing a model that can 
+                recognize and translate signed letters into text, we hope to bridge this gap and enable smoother communication for all. 
+            Additionally, this project can have potential applications in fields such as education and healthcare, where ASL interpretation 
+            is essential but not always readily available.</p>
+        </div>
+        <div class="image-container">
+            <img src="\Images\apbpjgud.bmp" alt="Image 1" width="546" height="350">
+        </div>
+        <div class="image-container">
+            <img src="\Images\asl-clipart-ASL.png" alt="Image 2" width="100%" height="270">
+        </div>
+        <div class="pattern-paragraph">
+            <h2>ASL Model Description</h2>
+            <p class="outlined-paragraph">Our model works by taking live video, feeding it through TensorFlow to use the data from people's
+                hand gestures. We feed that data into a model that we trained with around 25 thousand pictures 
+                that returns a sign languange letter with up to 75% confidence!
+            </p>
+        </div>
+    </div>
+    <a href="asl.html" class="run-model-button">Run Model</a>
+</body>
+</html>
