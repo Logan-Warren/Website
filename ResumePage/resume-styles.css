@@ -31,7 +31,12 @@ nav ul li a {
     color: #ffffff;
     text-decoration: none;
 }
-
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 12px;
+}
 section {
     background-color: #ffffff;
     padding: 20px;
