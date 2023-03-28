@@ -22,6 +22,33 @@
             text-align: center;
             padding: 15px;
             font-size: 24px;
+            position: relative;
+        }
+        .main-title {
+            font-size: 30px; /* Updated font size */
+            color:#FFFFFF
+        }
+        .SH-title{
+            font-size: 25px;
+            color:#b3b300
+        }
+        .nav-links {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 12px;
+        }
+        .award-text {
+            text-align: center;
+            color: #FFD700;
+            margin-top: 0;
+            margin-bottom: 15px;
         }
         .name-section {
             background-color: #383837;
@@ -36,7 +63,7 @@
             justify-content: space-around;
             padding: 0px;
             background-color: #5E5E5C;
-            flex-grow: 1;
+            flex: 1;
         }
         .pattern-paragraph, .image-container {
             width: 45%;
@@ -68,12 +95,21 @@
             border-radius: 0px;
             padding: 10px;
         }
+        .image-container img {
+            width: 80%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
     <div class="title-bar">
-        ASL Model
-        <div class="award-text" style="color: #b3b300;">STEELHACKS 2023 First Place Overall Winner</div>
+        <h1 class="main-title">ASL Model</h1> <!-- Added class to target only this text -->        
+        <h2 class="SH-title"> STEELHACKS 2023 First Place Overall Winner</h2>
+        
+        <div class="nav-links">
+            <a href="\index.html" class="nav-link">Home</a>
+            <a href="\ProjectsPage\project.html" class="nav-link">Projects</a>
+        </div>
     </div>
     <div class="name-section">
         <span class="name">Logan Warren</span>
@@ -84,6 +120,8 @@
     <div class="content-section">
         <div class="pattern-paragraph">
             <h2>ASL Model Motivation</h2>
+           
+
             <p class="outlined-paragraph">The motivation for our ASL Model project is to provide a more accessible and 
                 efficient means of communication for individuals who are deaf or hard of hearing. American Sign Language (ASL) 
                 is a complex language that uses hand gestures and facial expressions to convey meaning. However, not everyone is 

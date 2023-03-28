@@ -20,11 +20,17 @@
     .top-container {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
       width: 100%;
       padding: 20px;
       box-sizing: border-box;
     }
+
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+    }
+    
 
     button {
       background-color: #61dafb;
@@ -35,7 +41,7 @@
       text-decoration: none;
       display: inline-block;
       font-size: 16px;
-      margin: 4px 2px;
+      margin: 4px 60px;
       cursor: pointer;
       border-radius: 4px;
       outline: none;
@@ -84,14 +90,36 @@
       text-align: center;
       padding-bottom: 10px;
     }
+    .nav-container {
+      display: flex;
+      margin-left: auto;
+    }
+
+    .nav-link {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .nav-link:hover {
+      color: #ccc;
+    }
   </style>
 </head>
 <body>
-  <div class="top-container">
-    <button id="startButton">Start Camera</button>
-    <button id="stopButton" disabled>Stop Camera</button>
-    <button id="toggleKeypointsButton">Toggle Keypoints</button>
-  </div>
+    <div class="top-container">
+      <div class="buttons-container">
+        <button id="startButton">Start Camera</button>
+        <button id="stopButton" disabled>Stop Camera</button>
+        <button id="toggleKeypointsButton">Toggle Keypoints</button>
+      </div>
+      <div class="nav-container">
+        <a href="\index.html" class="nav-link">Home</a>
+        <a href="\ProjectsPage\project.html" class="nav-link">Projects</a>
+      </div>
+    </div>
+      
   <div class="video-container">
     <video id="video" width="640" height="480" style="display: none;"></video>
     <canvas id="videoCanvas" width="640" height="480" style="display: none;"></canvas>

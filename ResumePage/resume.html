@@ -7,71 +7,138 @@
     <title>Logan Warren - Resume</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="resume-styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </head>
 <body>
+    <div class="content-wrapper">
     <header>
         <h1>Logan Warren - Resume</h1>
     </header>
     <nav>
         <ul>
             <li><a href="\index.html">Home</a></li>
-            <li><a href="resume.html">Resume</a></li>
+            <li><a href="\ProjectsPage\project.html">Projects</a></li>
+            <li><a href="\Images\Resume - Logan Warren.pdf" download="Resume - Logan Warren" class="download-button">Download PDF</a></li> <!-- Add this line -->
         </ul>
     </nav>
     <main>
         <section id="education">
             <h2>Education</h2>
-            <h3>University of Pittsburgh</h3>
-            <p>Pursuing a Bachelor of Science in Information Science with a concentration in Networks and Security, minoring in Computer Science, 2020 - 2024</p>
-            <h3>Smithson Valley High School</h3>
+            <h3>University of Pittsburgh [2022 - 2026]</h3>
+            <p>Bachelor of Science in Information Science Concentrated in Networks and Security, minoring in Computer Science</p>
+            <h3>Smithson Valley High School [2018 - 2022]</h3>
             <p>Graduated Class of 2022 - Top 10% - GPA 3.7, National Honor Society</p>
         </section>
         <section id="experience">
             <h2>Experience</h2>
-            <h3>Chili's Grill & Bar</h3>
-            <p>Server, April 2022 - July 2022</p>
+            <h3>Chili's Grill & Bar - Server</h3>
+            <p>April 2022 - July 2022</p>
             <ul>
                 <li>As a server, I managed a section of the restaurant where I took orders, and assisted customers and kitchen staff.</li>
             </ul>
-            <h3>Cricket Wireless</h3>
-            <p>Sales Associate, January 2022 - March 2022</p>
+            <h3>Cricket Wireless - Sales Associate</h3>
+            <p>January 2022 - March 2022</p>
             <ul>
-                <li>Promoted products to potential buyers</li>
-                <li>Assisted customers with setting up phone plans and cellular service needs</li>
+                <li>Promoted products to potential buyers, and Assisted customers with setting up phone plans and cellular service needs.</li>
             </ul>
-            <h3>Mekaworks</h3>
-            <p>Data Analyst Intern, October 2020 - April 2021</p>
+            <h3>Mekaworks - Data Analyst Intern</h3>
+            <p>October 2020 - April 2021</p>
             <ul>
-                <li>Programmed robots for object identification</li>
-                <li>Assisted the team in engineering and designing robots for local commercial use</li>
+                <li>Programmed robots for object identification. Assisted the team in engineering and designing robots for local commercial use</li>
+            </ul>
+        </section>
+        <section id="Licenses and Certifications">
+            <h2>Licenses and Certifications</h2>
+            <h3>
+                <a href="https://www.linkedin.com/in/logan-warren-2232371a8/" target="_blank">LinkedIn:</a>
+            </h3>
+            <ul>
+                <li>Programming Foundations: Databases [2020] </li>
+                <li>Strategic Thinking [2020]
             </ul>
         </section>
         <section id="skills">
             <h2>Skills</h2>
-            <ul>
-                <li>Leadership</li>
-                <li>Customer service</li>
-                <li>Programming</li>
-                <li>Java</li>
-                <li>Python</li>
-                <li>Cybersecurity</li>
-                <li>3D Modeling</li>
-                <li>Communication</li>
-            </ul>
+            <div class="skills-container">
+                <ul class="skills-list">
+                    <li>Leadership</li>
+                    <li>Customer service</li>
+                    <li>Programming</li>
+                    <li>Java</li>
+                    <li>HTML</li>
+
+                </ul>
+                <ul class="skills-list">
+                    <li>CSS</li>
+                    <li>Python</li>
+                    <li>Cybersecurity</li>
+                    <li>3D Modeling</li>
+                    <li>Communication</li>
+                </ul>
+            </div>
         </section>
         <section id="organizations">
             <h2>Organizations</h2>
             <h3>Current:</h3>
             <ul>
-                <li>CSC - Pitt Computer Science Club</li>
-                <li>OASIS - Pitt Information Science Club</li>
-                <li>CSC - Hackathons</li>
+                <li>
+                    CSC - Pitt Computer Science Club
+                    <ul>
+                        <li>CSC is intended to be a community of members to develop professionally, engage with each other socially, and explore the field of Computer Science intellectually.</li>
+                    </ul>
+                </li>
+                <li>
+                    OASIS - Pitt Information Science Club
+                    <ul>
+                        <li>Students who have an interest in information science and related studies find a way to connect with one another socially and professionally in order to further develop one’s network and skillset.  OASIS hosts a mix of social and professional development events. </li>
+                    </ul>
+                </li>
+                <li>
+                    RAS - Robotics and Automation Society
+                    <ul>
+                        <li>Students design and build robotics projects for competitions, research, career development, and fun.</li>
+                    </ul>
+                </li>
             </ul>
             <h3>Secondary School:</h3>
             <ul>
-                <li>CyberPatriot: President</li>
-                <li>Robotics: Programmer</li>
-                <li>UIL Academics Computer Science and Computer Science Applications</li>
-                <li>Marching Band</li>
+                <li>
+                    CyberPatriot
+                    <ul>
+                        <li>President [2018 - 2022]</li>
+                    </ul>
+                </li>
+                <li>
+                    Robotics
+                    <ul>
+                        <li>Programmer [2020 - 2022]</li>
+                    </ul>
+                </li>
+                <li>
+                    UIL Academics
+                    <ul>
+                        <li>Computer Science and Computer Science Applications</li>
+                    </ul>
+                </li>
+                <li>
+                    Marching Band
+                </li>
+                
             </ul>
         </section>
+    </main>
+</div>
+<aside>
+    <img src="\Images\Tower.PNG">
+</aside>
+<script>
+    document.getElementById('download-pdf').addEventListener('click', () => {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF();
+        // Save the PDF file
+        pdf.save('resume.pdf');
+    });
+</script>
+
+</body>
+</html>
