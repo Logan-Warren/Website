@@ -25,30 +25,28 @@
             position: relative;
         }
         .main-title {
-            font-size: 30px; /* Updated font size */
+            font-size: 30px;
             color:#FFFFFF
         }
         .SH-title{
             font-size: 25px;
             color:#b3b300
         }
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         .nav-links {
-            position: absolute;
-            top: 50%;
-            right: 15px;
-            transform: translateY(-50%);
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
         }
         .nav-link {
             color: white;
             text-decoration: none;
             margin-left: 15px;
-            font-size: 12px;
-        }
-        .award-text {
-            text-align: center;
-            color: #FFD700;
-            margin-top: 0;
-            margin-bottom: 15px;
+            font-size: 15px;
         }
         .name-section {
             background-color: #383837;
@@ -58,19 +56,26 @@
             align-items: center;
         }
         .content-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 0px;
-            background-color: #5E5E5C;
-            flex: 1;
-        }
-        .pattern-paragraph, .image-container {
-            width: 45%;
-            margin-bottom: 0px;
-        }
+    display: flex;
+    flex-wrap: nowrap; /* Change this to nowrap */
+    justify-content: space-around;
+    padding: 0px;
+    background-color: #5E5E5C;
+    flex: 1;
+}
+.text-section, .image-section {
+    width: 45%;
+}
+.image-container img {
+    display: block; /* Add this line to fix the positioning */
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    max-height: 400px;
+}
         h2 {
             color: #000000;
+            text-align: center; /* Added to center titles */
         }
         .run-model-button {
             display: block;
@@ -96,21 +101,26 @@
             padding: 10px;
         }
         .image-container img {
-            width: 100%;
-            height: auto;
-            max-width: 600px; /* Add a max-width */
-            max-height: 400px; /* Add a max-height */
-        }
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    max-height: 400px;
+    border: 2px solid black; /* Add a black border */
+    border-radius: 10px; /* Add rounded corners */
+    margin-top: 70px; /* Add space between the title section and the images */
+}
     </style>
 </head>
 <body>
     <div class="title-bar">
-        <h1 class="main-title">ASL Model</h1> <!-- Added class to target only this text -->        
-        <h2 class="SH-title"> STEELHACKS 2023 First Place Overall Winner</h2>
-        
-        <div class="nav-links">
-            <a href="/Personal-Website/" class="nav-link">Home</a>
-            <a href="../project.html" class="nav-link">Projects</a>
+        <div class="title-container">
+            <h1 class="main-title">ASL Model</h1>
+            <h2 class="SH-title"> STEELHACKS 2023 First Place Overall Winner</h2>
+            <div class="nav-links">
+                <a href="/Personal-Website/" class="nav-link">Home</a>
+                <a href="../project.html" class="nav-link">Projects</a>
+            </div>
         </div>
     </div>
     <div class="name-section">
@@ -120,32 +130,41 @@
         <span class="name">Brayden Nguyen</span>
     </div>
     <div class="content-section">
-        <div class="pattern-paragraph">
-            <h2>ASL Model Motivation</h2>
-           
-
-            <p class="outlined-paragraph">The motivation for our ASL Model project is to provide a more accessible and 
-                efficient means of communication for individuals who are deaf or hard of hearing. American Sign Language (ASL) 
-                is a complex language that uses hand gestures and facial expressions to convey meaning. However, not everyone is 
-                proficient in ASL, which can create communication barriers for those who rely on it. By developing a model that can 
-                recognize and translate signed letters into text, we hope to bridge this gap and enable smoother communication for all. 
-            Additionally, this project can have potential applications in fields such as education and healthcare, where ASL interpretation 
-            is essential but not always readily available.</p>
+        <div class="text-section">
+            <div class="steelhacks-section">
+                <h2>STEELHACKS</h2>
+                <p class="outlined-paragraph">
+                    SteelHacks is an annual hackathon event organized by the University of Pittsburgh's School of Computing and Information. The event brings together students from diverse backgrounds to collaborate, innovate, and create unique projects within a limited time frame. Participants have the opportunity to learn from experienced mentors, network with industry professionals, and compete for awards and prizes. SteelHacks fosters a dynamic environment that encourages creativity, teamwork, and the development of valuable technical skills.
+                </p>
+            </div>
+            <div class="pattern-paragraph">
+                <h2>ASL Model Motivation</h2>
+                <p class="outlined-paragraph">The motivation for our ASL Model project is to provide a more accessible and 
+                    efficient means of communication for individuals who are deaf or hard of hearing. American Sign Language (ASL) 
+                    is a complex language that uses hand gestures and facial expressions to convey meaning. However, not everyone is 
+                    proficient in ASL, which can create communication barriers for those who rely on it. By developing a model that can 
+                    recognize and translate signed letters into text, we hope to bridge this gap and enable smoother communication for all. 
+                    Additionally, this project can have potential applications in fields such as education and healthcare, where ASL interpretation 
+                    is essential but not always readily available.</p>
+            </div>
+            <div class="pattern-paragraph">
+                <h2>ASL Model Description</h2>
+                <p class="outlined-paragraph">Our model works by taking live video, feeding it through TensorFlow to use the data from people's
+                    hand gestures. We feed that data into a model that we trained with around 25 thousand pictures 
+                    that returns a sign languange letter with up to 75% confidence!
+                </p>
+            </div>
         </div>
-        <div class="image-container">
-            <img src="https://raw.githubusercontent.com/LoganWarren/Personal-Website/main/Images/apbpjgud.png" alt="Image 1" width="546" height="350">
-        </div>
-        <div class="image-container">
-            <img src="/Personal-Website/Images/Snapchat-1650025712.jpg" alt="Image 2" width="100%" height="270">
-        </div>
-        <div class="pattern-paragraph">
-            <h2>ASL Model Description</h2>
-            <p class="outlined-paragraph">Our model works by taking live video, feeding it through TensorFlow to use the data from people's
-                hand gestures. We feed that data into a model that we trained with around 25 thousand pictures 
-                that returns a sign languange letter with up to 75% confidence!
-            </p>
+        <div class="image-section">
+            <div class="image-container">
+                <img src="https://raw.githubusercontent.com/LoganWarren/Personal-Website/main/Images/apbpjgud.png" alt="Image 1" width="546" height="350">
+            </div>
+            <div class="image-container">
+                <img src="/Personal-Website/Images/Snapchat-1650025712.jpg" alt="Image 2" width="100%" height="270">
+            </div>
         </div>
     </div>
     <a href="asl.html" class="run-model-button">Run Model</a>
 </body>
 </html>
+
