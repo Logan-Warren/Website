@@ -76,7 +76,7 @@ aside {
     width: 500px; /* Adjust this value as needed to change the width of the image */
     position: fixed;
     top: 0;
-    right: 1px; /* Adjust this value to change the distance from the right side */
+    right: -20px; /* Adjust this value to change the distance from the right side */
     height: 100%;
     overflow: hidden;
     z-index: -1; /* Place the image behind the content */
