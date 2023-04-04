@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logan Warren - Information Science Student</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const scrollLinks = document.querySelectorAll("a[href^='#']");
+            
+            for (const link of scrollLinks) {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(e.target.hash);
+                    targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+                });
+            }
+        });
+        </script>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
+     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/isotope/3.0.6/isotope.pkgd.min.js"></script>
+   
 </head>
 <body>
+    <script>
+        AOS.init();
+    </script>
+    
     <header>
         <h1>Logan Warren</h1>
         <h2>Information Science Student at the University of Pittsburgh</h2>
@@ -19,7 +42,7 @@
             <li><a href="ResumePage\resume.html">Resume</a></li>
         </ul>
     </nav>
-    <section id="about">
+    <section id="about" data-aos="fade-up" data-aos-duration="1000">
         <h3>A Brief About Me</h3>
         <div class="about-grid">
             <div class="about-content">
@@ -36,22 +59,23 @@
             </div>
         </div>
     </section>
-    <section id="projects">
+    <section id="projects"data-aos="fade-up" data-aos-duration="1000">
         <div class="project-title-bar">
             <h1 style="color: aliceblue;">Projects</h1>
-                
-    </section>
-<div class="projects-link">
+                <div class="projects-link">
                     <a href="ProjectsPage\project.html">Go to Projects</a>
                 </div>
+    </section>
+
 
         </div>
         <div class="projects-grid">
             <div class="project">
-                <h3 class="text-center">Current Project</h3>
+                <h3 class="text-center">Current Projects</h3>
                 <ul>
                     <li>Nooked</li>
                     <li>PyGame - Hackathon</li>
+                    <li>Major League Hacking Global Hack Week - APIs</li>
                     <li>Personal Website</li>
                 </ul>
             </div>
@@ -69,15 +93,33 @@
             </div>
         </div>
     </section>
-    <section id="contact">
+    <section id="contact" data-aos="fade-up" data-aos-duration="1000">
         <h2>Contact</h2>
         <p>Email: loganwcollege@gmail.com</p>
         <p>Phone: +1 (210) 364-9506</p>
         <p><a href="https://www.linkedin.com/in/logan-warren-2232371a8/" target="_blank">LinkedIn</a></p>
         <p><a href="https://github.com/LoganWarren" target="_blank">GitHub</a></p>
     </section>
+    <button id="backToTop" title="Go to top">&uarr;</button>
     <footer>
         <p>&copy; 2023 Logan Warren. All rights reserved.</p>
     </footer>
+    <script>
+        const backToTopButton = document.getElementById("backToTop");
+        
+        window.onscroll = () => {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+    
+        backToTopButton.onclick = () => {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        };
+    </script>
+    
 </body>
 </html>
