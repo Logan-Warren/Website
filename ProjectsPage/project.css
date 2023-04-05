@@ -5,6 +5,8 @@
     --accent-color: #000000;
     --secondary-color: #34495e;
     --secondary-color-light: #546787;
+    --background-color: #d3d3d3;
+    --mainback-color: #6b80a3;
 }
 
 html {
@@ -17,7 +19,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);
+    background-color: var(--mainback-color);
 }
 
 h1 {
@@ -31,7 +33,7 @@ h1 {
 h2 {
     font-family: var(--secondary-font);
     font-size: 24px;
-    color: var(--accent-color);
+    color: var(--main-color);
     margin-bottom: 10px;
 }
 
@@ -59,7 +61,7 @@ h4 {
     margin: 0;
 }
 .header {
-    background-color: var(--secondary-color);
+    background-color: var(--main-color);
     padding: 30px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow effect */
@@ -79,14 +81,16 @@ h4 {
     display: flex;
     justify-content: center;
     margin-top: 0;
+    padding-top: 20px; /* Add padding-top */
+    border-top: 2px solid #ffffff; /* Add border-top */
 }
 .nav-link {
-    color: #ffffff; /* Change color to white */
+    color: #ffffff;
     text-decoration: none;
     margin-left: 15px;
     font-size: 20px;
     transition: color 0.3s ease; /* Add transition effect */
-
+    font-weight: bold; /* Add font-weight */
 }
 .nav-link:hover {
     color: var(--accent-color); /* Change color on hover */
@@ -94,12 +98,13 @@ h4 {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-color: var(--secondary-color-light);
+    background-color: var(--background-color);
+    border: 1px solid var(--main-color); /* Add border */
     border-radius: 15px;
     margin: 20px;
 }
 .project-section:nth-child(even) {
-    background-color: var(--secondary-color-light);
+    background-color: var(--background-color);
 }
 .project-description {
     width: 60%;
