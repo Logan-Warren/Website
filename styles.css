@@ -238,3 +238,7 @@ a main color border */
             max-width: 100%;
         }
     }
+    
+    .github-link {
+        margin-right: 20px; /* Adjust this value as needed */
+    }
