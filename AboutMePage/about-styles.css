@@ -1,0 +1,140 @@
+:root {
+    --main-font: 'Montserrat', sans-serif;
+    --secondary-font: 'Roboto', sans-serif;
+    --main-color: #2c3e50; /* Dark blue */
+    --secondary-color: #3498db; /* Blue */
+    --accent-color: #ecf0f1; /* Light gray */
+    --background-color: #ffffff; /* White */
+}
+header {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+nav {
+    background-color: var(--main-color);
+    text-align: center;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    font-family: var(--secondary-font);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--secondary-color);
+}
+
+body {
+    font-family: var(--main-font);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}
+#skills, #education, #hobbies {
+    background-color: var(--accent-color);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+.about-me-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+}
+
+.about-me-image {
+    max-width: 50%;
+}
+
+.about-me-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+}
+
+@media screen and (max-width: 600px) {
+    .about-me-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-me-image {
+        max-width: 100%;
+    }
+}
+section {
+    padding: 2rem 0;
+}
+
+h3 {
+    margin-bottom: 1rem;
+}
+h3:hover {
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+
+footer {
+    background-color: var(--main-color);
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer nav ul li {
+    margin: 0 1rem;
+}
+
+footer nav ul li a {
+    color: #fff;
+    font-family: var(--secondary-font);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+footer nav ul li a:hover {
+    background-color: var(--secondary-color);
+}
