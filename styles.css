@@ -191,7 +191,9 @@ a main color border */
     .projects-link a:hover {
     background-color: var(--accent-color);
     }
-    
+    .github-link {
+        margin-right: 20px; /* Adjust this value as needed */
+    }
     /* Media queries */
     @media screen and (max-width: 900px) {
         .projects-grid {
@@ -239,6 +241,4 @@ a main color border */
         }
     }
     
-    .github-link {
-        margin-right: 20px; /* Adjust this value as needed */
-    }
+    
