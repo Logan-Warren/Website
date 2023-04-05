@@ -139,6 +139,21 @@
         pdf.save('resume.pdf');
     });
 </script>
+<script>
+    const scrollToTopButton = document.getElementById("scrollToTop");
 
+    window.addEventListener("scroll", () => {
+        if (document.documentElement.scrollTop > 100) {
+            scrollToTopButton.style.display = "block";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    });
+
+    scrollToTopButton.addEventListener("click", () => {
+        document.documentElement.scrollTop = 0;
+    });
+</script>
+<button id="scrollToTop" title="Scroll to Top">&#8679;</button>
 </body>
 </html>
