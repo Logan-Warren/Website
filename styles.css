@@ -1,9 +1,11 @@
 :root {
     --main-font: 'Montserrat', sans-serif;
     --secondary-font: 'Roboto', sans-serif;
-    --main-color: #2c3e50; /* Dark blue */
-    --secondary-color: #2980b9; /* Blue */
-    --accent-color: #f39c12; /* Orange */
+    --background-color: #191919; /* Very Dark Grey */
+    --secondary-background-color: #2F2F2F; /* Slightly Lighter Grey */
+    --secondary-color: #808080; /* Medium Grey */
+    --main-color: #BFBFBF; /* Light Grey */
+    --accent-color: #61dafb; /* Bright Blue */
 }
 
 * {
@@ -14,18 +16,9 @@
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5; /* light grey background */
-    }
-    
-    header {
-        background: linear-gradient(rgba(41, 128, 185, 0.7), rgba(41, 128, 185, 0.7)), url('Images/header-background.jpg');
-        background-size: cover;
-        color: #fff;
-        padding: 2rem 0;
-        text-align: center;
-        position: relative;
-    }
-    
+    background-color: var(--background-color);
+    color: var(--main-color);    
+}   
     header::after {
     content: '';
     display: block;
@@ -50,19 +43,24 @@
     }
     
     nav {
-    background: var(--main-color);
-    text-align: center;
-    padding: 1rem;
+        background: var(--secondary-color);
+        text-align: center;
+        padding: 1rem;
+        color: var(--background-color);
     }
     
     nav ul {
-    list-style: none;
-    padding: 0;
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center; /* Align items in the center */
     }
     
     nav ul li {
-    display: inline;
-    margin: 0 1rem;
+        display: inline;
+        width: 200px; /* Adjust this value as needed */
+
+        text-align: center; /* Center the text within each item */
     }
     
     nav ul li a {
@@ -95,10 +93,13 @@
     }
     
     footer {
-    background: var(--main-color);
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
+        background: var(--secondary-color);
+        color: var(--background-color);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1px;
     }
     
     .about-grid {
@@ -147,10 +148,11 @@ a main color border */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
-    }
+    padding: 50px;    
+}
 
     .projects-grid .project {
-        background-color: #fff;
+        background-color: #2F2F2F;
         border-radius: 5px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -190,9 +192,6 @@ a main color border */
     
     .projects-link a:hover {
     background-color: var(--accent-color);
-    }
-    .github-link {
-        margin-right: 20px; /* Adjust this value as needed */
     }
     /* Media queries */
     @media screen and (max-width: 900px) {
@@ -241,4 +240,40 @@ a main color border */
         }
     }
     
+    .container {
+        display: grid;
+        justify-content: space-between;
+        padding: 20px; /* This keeps the boxes from touching the edges of the page */
+    }
     
+    .about-me{
+        background-color: #2F2F2F;
+        border-radius: 5px;
+        width: 100%; /* Adjust as needed */
+        max-width: 700px; /* This is an example value, adjust as needed */
+        padding: 50px; /* This adds some space around your text/photo inside the box */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        height: 100%;
+    }
+    .my-photo {
+        background-color: #2F2F2F;
+        border-radius: 5px;
+        width: 40%; /* Adjust as needed */
+        max-width: 500px; /* This is an example value, adjust as needed */
+        padding: 20px; /* This adds some space around your text/photo inside the box */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .my-photo img {
+        width: 100%; /* Make the image take the full width of its container */
+        height: 100%; /* Adjust the height of the image based on the width of the container */
+    }
+    .flex-container {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* This centers the items horizontally */
+        gap: 90px; /* This adds some space between your items */
+        padding: 50px;
+        flex-wrap: wrap; /* This makes the items wrap to a new line if the screen is too small */
+    }
