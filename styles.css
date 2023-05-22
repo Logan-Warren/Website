@@ -154,7 +154,7 @@ a main color border */
     .projects-grid .project {
         background-color: #2F2F2F;
         border-radius: 5px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
     
@@ -252,7 +252,7 @@ a main color border */
         width: 100%; /* Adjust as needed */
         max-width: 700px; /* This is an example value, adjust as needed */
         padding: 50px; /* This adds some space around your text/photo inside the box */
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         height: 100%;
     }
@@ -262,7 +262,7 @@ a main color border */
         width: 40%; /* Adjust as needed */
         max-width: 500px; /* This is an example value, adjust as needed */
         padding: 20px; /* This adds some space around your text/photo inside the box */
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
     .my-photo img {
