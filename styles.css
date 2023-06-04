@@ -9,7 +9,6 @@
         animation: none !important;
     }
 }
-
 html {
     zoom: var(--rzf, 1);
     font-size: max(calc(min(var(--1vw, 1vw), 13.66px) * var(--rfso, 1)), var(--minfs, 0px));
