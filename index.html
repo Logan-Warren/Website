@@ -1,118 +1,1131 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logan Warren - Information Science Student</title>
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const scrollLinks = document.querySelectorAll("a[href^='#']");
-            
-            for (const link of scrollLinks) {
-                link.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    const targetElement = document.querySelector(e.target.hash);
-                    targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-                });
-            }
-        });
-    </script>
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
-     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/isotope/3.0.6/isotope.pkgd.min.js"></script>
-</head>
-<body>
-    <script>
-        AOS.init();
-    </script>
-    <nav>
-        <ul>
-            <li><a href="AboutMePage/about-me.html">About</a></li>
-            <li><a href="ProjectsPage\project.html">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="ResumePage\resume.html">Resume</a></li>
-        </ul>
-    </nav>
-    <div class="flex-container" data-aos="fade-up" data-aos-duration="1000">
-        <div class="about-me">
-            <h1>Logan Warren</h1>
-            <h2>Information Science & Digital Narrative and Interactive Design Student at the University of Pittsburgh</h2>
-            <h3>A Brief About Me</h3>
-            <div class="about-content">
-                <p>Welcome! I'm Logan Warren, a dual-degree student at the University of Pittsburgh, specializing in Information Science focused in Networking and Security and Digital Narrative & Interactive Design, with a minor in Computer Science. I've honed my technical skills in various settings such as programming for object identification and exploring front-end development. My expertise spans numerous programming languages, 3D modeling, and cybersecurity. Outside of my educational pursuits, I'm an active participant in hackathons and tech organizations, always eager to innovate and collaborate with fellow tech enthusiasts. Feel free to explore my site, learn more about my journey, and connect with me on LinkedIn and GitHub.</p>
-                <a href="AboutMePage\about-me.html" class="read-more">Read More About Me</a>
-            </div>
-        </div>
-        <div class="my-photo" data-aos="fade-up" data-aos-duration="1000">
-            <img src="Images\about-image.jpg" alt="About Logan Warren">
-        </div>
-    </div>    
-    <section id="projects" data-aos="fade-up" data-aos-duration="1000">
-        <div class="project-title-bar">
-            <h1 style="color: aliceblue;">Projects</h1>
-            <div class="projects-link">
-                <a href="/ProjectsPage/project.html">Go to Projects</a>
-            </div>
-        </div>
-    </section>
-        </div>
-        <div class="projects-grid">
-            <div class="project">
-                <h3 class="text-center">Current Projects</h3>
-                <ul>
-                    <li>Major League Hacking Global Hack Weeks</li>
-                    <li>Personal Website</li>
+    <head>
+        <base href="/">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Logan Warren</title>
+        <meta name="description" content="" />
+        <link rel="icon" href="26387fa4f5b1e3f7b6217b27d79bf264.png" type="image/png" sizes="16x16">
+        <link rel="icon" href="2d0b56e7e51cf11036ad8734bdb67e2d.png" type="image/png" sizes="32x32">
+        <link rel="apple-touch-icon" href="725b756a69a7d4c235070e51acd85560.png" sizes="180x180">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <style>
+        </style>
+        <noscript>
+            <style>
+                .animated {
+                    animation-play-state: running !important;
+                }
+
+                @keyframes pulse {}
+            </style>
+        </noscript>
+        <script nonce='7cd70cb1-9bbb-4871-87ab-dcb6d2507953'>
+            ! function() {
+                "use strict";
+
+                function t(t, n) {
+                    let e;
+                    return (...o) => {
+                        clearTimeout(e), e = setTimeout((() => {
+                            t(...o)
+                        }), n)
+                    }
+                }
+                class n {
+                    constructor() {
+                        this.callbacks = [], window.addEventListener("DOMContentLoaded", (() => this.onDOMContentLoaded()))
+                    }
+                    onDOMContentLoaded() {
+                        this.callbacks.sort(((t, n) => t.priority - n.priority)).forEach((({
+                            callback: t
+                        }) => t()))
+                    }
+                    runOnLoad(t) {
+                        "loading" === document.readyState ? this.callbacks.push(t) : t.callback()
+                    }
+                }
+
+                function e(t, e = Number.MAX_VALUE) {
+                    var o;
+                    (window.canva_scriptExecutor = null !== (o = window.canva_scriptExecutor) && void 0 !== o ? o : new n).runOnLoad({
+                        callback: t,
+                        priority: e
+                    })
+                }
+                class o {
+                    constructor(t) {
+                        this.items = [], this.previousWidth = document.documentElement.clientWidth, this.previousHeight = window.innerHeight;
+                        const n = t((() => this.onWindowResize()), 100);
+                        window.addEventListener("resize", n)
+                    }
+                    onWindowResize() {
+                        const t = document.documentElement.clientWidth,
+                            n = window.innerHeight,
+                            e = this.previousWidth !== t,
+                            o = this.previousHeight !== n;
+                        this.items.forEach((t => {
+                            const n = () => {
+                                t.callback(), t.executed = !0
+                            };
+                            (!t.executed || e && t.options.runOnWidthChange || o && t.options.runOnHeightChange) && n()
+                        })), this.previousWidth = t, this.previousHeight = n
+                    }
+                    runOnResize(t, n) {
+                        this.items.push({
+                            callback: t,
+                            options: n,
+                            executed: n.runOnLoad
+                        }), this.items.sort(((t, n) => t.options.priority - n.options.priority)), n.runOnLoad && e(t, n.priority)
+                    }
+                }
+
+                function i(n, e, i = t) {
+                    var r;
+                    (window.canva_debounceResize = null !== (r = window.canva_debounceResize) && void 0 !== r ? r : new o(i)).runOnResize(n, {
+                        runOnLoad: !1,
+                        runOnWidthChange: !0,
+                        runOnHeightChange: !1,
+                        priority: Number.MAX_VALUE,
+                        ...e
+                    })
+                }
+
+                function r(t, n, e = .001) {
+                    return Math.abs(t - n) < e
+                }
+
+                function c(t, n) {
+                    return window.getComputedStyle(t).getPropertyValue(n)
+                }
+
+                function u(t, n, e) {
+                    t.style.setProperty(n, e)
+                }
+
+                function s(t, n) {
+                    const e = document.createElement("div");
+                    e.style.setProperty(t, n), document.body.append(e);
+                    const o = c(e, t);
+                    return e.remove(), o
+                }
+
+                function a() {
+                    const t = function() {
+                            const t = parseFloat(s("font-size", "0.1px"));
+                            return t > 1 ? t : 0
+                        }(),
+                        n = function(t) {
+                            const n = 2 * Math.max(t, 1);
+                            return n / parseFloat(s("font-size", `${n}px`))
+                        }(t);
+                    if (function(t) {
+                            if (0 === t) return;
+                            u(document.documentElement, "--minfs", `${t}px`), i((() => {
+                                const n = 100 * t,
+                                    {
+                                        clientWidth: e
+                                    } = document.documentElement;
+                                u(document.documentElement, "--rzf", n > e ? (e / n).toPrecision(4) : null)
+                            }), {
+                                runOnLoad: !0
+                            })
+                        }(t * Math.max(1, n)), r(n, 1)) return;
+                    const e = r(parseFloat(c(document.documentElement, "font-size")), parseFloat(s("grid-template-columns", "1rem")));
+                    u(document.documentElement, e ? "--rfso" : "--bfso", n.toPrecision(4))
+                }
+
+                function d() {
+                    document.querySelectorAll("img, image, video, svg").forEach((t => t.addEventListener("contextmenu", (t => t.preventDefault()))))
+                }
+                const l = "--sbw",
+                    m = "--inner1Vh";
+
+                function h(t, n, e) {
+                    t.style.setProperty(n, e)
+                }
+
+                function f() {
+                    h(document.documentElement, m, window.innerHeight / 100 + "px"),
+                        function() {
+                            const t = window.innerWidth - document.documentElement.clientWidth;
+                            h(document.documentElement, l, t >= 0 ? `${t}px` : null)
+                        }()
+                }
+                var p;
+                const g = "undefined" != typeof window ? null === (p = window.navigator) || void 0 === p ? void 0 : p.userAgent : void 0;
+                const w = !(!g || (v = g, !v.match(/AppleWebKit\//) || v.match(/Chrome\//) || v.match(/Chromium\//)));
+                var v;
+
+                function y() {
+                    document.querySelectorAll("svg").forEach((t => t.style.background = "url('')"))
+                }
+
+                function b(t) {
+                    const n = Array.from(t.children);
+                    n.forEach(((t, e) => {
+                        if (t.hasAttribute("data-foreign-object-container")) t.style.transformOrigin = "", t.style.transform = "";
+                        else {
+                            const o = document.createElement("div");
+                            o.setAttribute("data-foreign-object-container", ""), t.insertAdjacentElement("beforebegin", o), t.remove(), o.append(t), n[e] = o
+                        }
+                    }));
+                    const e = t.getScreenCTM();
+                    if (!e) return;
+                    const {
+                        a: o,
+                        b: i,
+                        c: r,
+                        d: c
+                    } = e;
+                    n.forEach((t => {
+                        if (!t.hasAttribute("data-foreign-object-container")) return;
+                        const {
+                            style: n
+                        } = t;
+                        n.transformOrigin = "0px 0px", n.transform = `matrix(${o}, ${i}, ${r}, ${c}, 0, 0)`
+                    }))
+                }
+                let E;
+
+                function O() {
+                    E || (E = Array.from(document.querySelectorAll("foreignObject")).filter((t => 0 === t.getBoundingClientRect().width))), Array.from(E).forEach(b)
+                } [function() {
+                    e(a)
+                }, function() {
+                    i(f, {
+                        runOnLoad: !0,
+                        runOnHeightChange: !0,
+                        priority: 1
+                    })
+                }, function() {
+                    w && i(O, {
+                        runOnLoad: !0
+                    })
+                }, function() {
+                    w && e(y)
+                }, function() {
+                    e(d)
+                }].forEach((t => t()))
+            }();
+        </script>
+        <script nonce="7cd70cb1-9bbb-4871-87ab-dcb6d2507953">
+            window.C_CAPTCHA_IMPLEMENTATION = 'RECAPTCHA';
+        </script>
+        <script nonce="7cd70cb1-9bbb-4871-87ab-dcb6d2507953">
+            window.C_CAPTCHA_KEY = '6Ldk59waAAAAAMPqkICbJjfMivZLCGtTpa6Wn6zO';
+        </script>
+    </head>
+    <body>
+        <div id="root">
+            <nav style="background-color:#ffffff;z-index:1;top:0px;display:flex;font-family:-apple-system, BlinkMacSystemFont, sans-serif;justify-content:flex-end;position:sticky;align-items:center;text-overflow:ellipsis;box-sizing:border-box;border-bottom:1px solid rgba(0, 0, 0, 0.07);height:50px;">
+                <input id="menuToggle" type="checkbox" style="display:none;"></input>
+                <label id="menuButton" for="menuToggle">
+                    <div id="menuButtonIcon" style="padding:8px;width:24px;">
+                        <svg viewBox="0 0 24.0 24.0" preserveAspectRatio="none" style="background:url(&#x27;&#x27;);">
+                            <path d="M5.75 5.25h12.5a.75.75 0 1 1 0 1.5H5.75a.75.75 0 0 1 0-1.5zm0 6h12.5a.75.75 0 1 1 0 1.5H5.75a.75.75 0 1 1 0-1.5zm0 6h12.5a.75.75 0 1 1 0 1.5H5.75a.75.75 0 1 1 0-1.5z"></path>
+                        </svg>
+                    </div>
+                </label>
+                <ul id="verticalMenu">
+                    <li class="navMenuLink">
+                        <a class="navMenuLinkContent" href="#home">Home</a>
+                    </li>
+                    <li class="navMenuLink">
+                        <a class="navMenuLinkContent" href="#about-me">About Me</a>
+                    </li>
+                    <li class="navMenuLink">
+                        <a class="navMenuLinkContent" href="#projects">Projects</a>
+                    </li>
+                    <li class="navMenuLink">
+                        <a class="navMenuLinkContent" href="#resume">Resume</a>
+                    </li>
+                    <li class="navMenuLink">
+                        <a class="navMenuLinkContent" href="#contact">Contact</a>
+                    </li>
                 </ul>
-            </div>
-            <div class="project">
-                <h3 class="text-center">Most Recent Project</h3>
-                <div class="project-description">
-                    <h3>ASLModel</h3>
-                    <h4>STEELHACKS 2023 - 1st Place Winner</h4>
-                    <div class="Recent-Project">
-                            <li><a href="/Personal-Website/ProjectsPage/ASL/ASLindex.html">Run the ASLModel</a></li>
-                            <li><a href="https://github.com/LoganWarren/ASLModel" target="_blank">View ASLModel on GitHub</a></li>
-                    </div>                  
-                    <p></p>
+                <ul id="horizontalMenu" style="padding:0;margin:0;">
+                    <li class="navMenuLink">
+                        <a class="navMenuLinkContent" href="#home">Home</a>
+                    </li>
+                    <li class="navMenuLink">
+                        <a class="navMenuLinkContent" href="#about-me">About Me</a>
+                    </li>
+                    <li class="navMenuLink">
+                        <a class="navMenuLinkContent" href="#projects">Projects</a>
+                    </li>
+                    <li class="navMenuLink">
+                        <a class="navMenuLinkContent" href="#resume">Resume</a>
+                    </li>
+                    <li class="navMenuLink">
+                        <a class="navMenuLinkContent" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <section id="home" style="z-index:0;overflow:hidden;grid-template-columns:auto 100rem auto;display:grid;position:relative;align-items:center;">
+                <div id="noUtgfvwOr9rRIM0" style="display:grid;min-height:100%;position:absolute;grid-area:1 / 1 / 2 / 4;min-width:100%;">
+                    <div id="ypynEsXx7hbS2WKK" style="z-index:0;">
+                        <div id="bBLFU2BLoFho7tuP" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="jWpzXII9InvDM83i" style="width:100%;opacity:1.0;height:100%;">
+                                <div id="OeoWoaTW1TwOkdw8" style="background-color:#141414;transform:scale(1, 1);overflow:hidden;width:100%;position:relative;opacity:1.0;height:100%;">
+                                    <div id="wMdPcEdFD4EghqC2" style="transform:rotate(0deg);top:-33.3984375%;left:0%;width:100%;position:absolute;height:133.3984375%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                        <img src="Images/CanvaBackground1.jpg" loading="lazy" srcset="Images/CanvaBackground1.jpg 1200w, Images/CanvaBackground1.jpg 2000w" sizes="(max-width: 375px) 320.5895961vw, (min-width: 375.05px) and (max-width: 480px) 259.54971759vw, (min-width: 480.05px) and (max-width: 768px) 177.05575189vw, (min-width: 768.05px) and (max-width: 1024px) 138.95670573vw, (min-width: 1024.05px) 100vw" style="display:block;object-fit:cover;width:100%;height:100%;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <button id="backToTop" title="Go to top">&uarr;</button>
-    <footer>
-        <div class="footer-left">
-            <section id="contact" data-aos="fade-up" data-aos-duration="1000">
-                <h2>Contact</h2>
-                <p>loganwarren@gmail.com  | (412) 436-9371</p>
-                <div class="footer-links">
-                    <p><a href="https://www.linkedin.com/in/logan-warren-2232371a8/" target="_blank">LinkedIn</a> | <a href="https://github.com/LoganWarren" target="_blank" class="github-link">GitHub</a> | <a href="https://devpost.com/LoganWarren" target="_blank">Devpost</a>
-                    </p>
+                <div id="e0B067VP6hW6g3P5" style="display:grid;position:relative;grid-area:1 / 2 / 2 / 3;">
+                    <div id="w5WgCGow3rrowxyA">
+                        <div id="nHtNANKBM5aeMTWn" style="display:grid;position:relative;grid-area:2 / 2 / 3 / 3;">
+                            <div id="Xwrh95576kVzmfE8" style="z-index:1;">
+                                <div id="zzDkJXJWmn29AMMi" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <svg id="xhMVV8I2YVaRmmLO" viewBox="0 0 379.4444 212.6907" preserveAspectRatio="none" style="overflow:hidden;top:0%;left:0%;background:url(&#x27;&#x27;);width:100%;position:absolute;opacity:0.3;height:100%;">
+                                        <g id="sw0yDEbWlQDC74tV" style="transform:scale(1, 1);">
+                                            <path id="Ve4xYUZ56AcCTWcR" d="M0.0,0.0 L379.44444444444446,0.0 L379.44444444444446,212.69071934898244 L0.0,212.69071934898244 L0.0,0.0" style="fill:#1a1a1a;opacity:1.0;"></path>
+                                        </g>
+                                    </svg>
+                                    <svg id="pHbhxviaDLgGKn2P" viewBox="0 0 266.6667 221.5796" preserveAspectRatio="none" style="overflow:hidden;top:0%;left:0%;background:url(&#x27;&#x27;);width:100%;position:absolute;opacity:0.3;height:100%;">
+                                        <g id="OYKg5nrXBAXuZaiX" style="transform:scale(1, 1);">
+                                            <path id="WVbduIcdlj823F6z" d="M0.0,0.0 L266.6666666666667,0.0 L266.6666666666667,221.5796082378714 L0.0,221.5796082378714 L0.0,0.0" style="fill:#1a1a1a;opacity:1.0;"></path>
+                                        </g>
+                                    </svg>
+                                    <svg id="oYyRR5SI7UfZozVE" viewBox="0 0 195.5556 211.7206" preserveAspectRatio="none" style="overflow:hidden;top:0%;left:0%;background:url(&#x27;&#x27;);width:100%;position:absolute;opacity:0.3;height:100%;">
+                                        <g id="Rx3aTJ2SKNOFbPAl" style="transform:scale(1, 1);">
+                                            <path id="cMc8tWguycJsaw9j" d="M0.0,0.0 L195.55555555555554,0.0 L195.55555555555554,211.72059531571222 L0.0,211.72059531571222 L0.0,0.0" style="fill:#1a1a1a;opacity:1.0;"></path>
+                                        </g>
+                                    </svg>
+                                    <svg id="DNuXgGx1auS7BXeV" viewBox="0 0 124.4444 193.9247" preserveAspectRatio="none" style="overflow:hidden;top:0%;left:0%;background:url(&#x27;&#x27;);width:100%;position:absolute;opacity:0.3;height:100%;">
+                                        <g id="D3l2BEZJ5xODlOqO" style="transform:scale(1, 1);">
+                                            <path id="exZTLfqBvRyxjdlV" d="M0.0,0.0 L124.44444444444446,0.0 L124.44444444444446,193.92467064763304 L0.0,193.92467064763304 L0.0,0.0" style="fill:#1a1a1a;opacity:1.0;"></path>
+                                        </g>
+                                    </svg>
+                                    <svg id="VkY439MxrN9IWlQP" viewBox="0 0 95.2778 187.1112" preserveAspectRatio="none" style="overflow:hidden;top:0%;left:0%;background:url(&#x27;&#x27;);width:100%;position:absolute;opacity:0.3;height:100%;">
+                                        <g id="u1a69fHR5LAE6vRc" style="transform:scale(1, 1);">
+                                            <path id="nPWRdKxDv0iW0r1K" d="M0.0,0.0 L95.27777777777777,0.0 L95.27777777777777,187.11117582757063 L0.0,187.11117582757063 L0.0,0.0" style="fill:#1a1a1a;opacity:1.0;"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div id="W0s1tJdcpXQ2MfnA" style="display:grid;position:relative;grid-area:3 / 3 / 4 / 4;">
+                                <div id="N1cuQE625avnUnvu" style="z-index:3;">
+                                    <div id="RBY1aEP1ggxqwIs6" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                        <div id="Gk1ilE6PtoZSq2gK" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                            <p id="N95DrUGCtif4LbEV" style="margin-left:0em;text-transform:none;color:#ffffff;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:0.94520483em;direction:ltr;text-align:left;">
+                                                <span id="zMDxc1CNLiRhircz" style="text-decoration-line:underline;color:#ffffff;font-weight:700;">Logan Warren</span>
+                                                <br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="e0iYSlBKeCKgQDiq" style="z-index:4;">
+                                    <div id="YgHppVeJ9Xt90TQY" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                        <div id="WmpplM6SLvsnw8a1" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                            <p id="eXoJVylTcrnTWvxf" style="color:#ffffff;letter-spacing:0.06em;font-family:YACgEUaXOJg-0;line-height:1.38749306em;">
+                                                <span id="prHVUTbkjSjYao7f" style="color:#ffffff;font-weight:700;">Information Science &amp; Digital Narrative and Interactive Design Student at the University of Pittsburgh</span>
+                                                <br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
+            <section id="about-me" style="z-index:0;overflow:hidden;grid-template-columns:auto 100rem auto;display:grid;margin-top:-1px;position:relative;align-items:center;">
+                <div id="HeIzl844uWR6TJ4R" style="display:grid;min-height:100%;position:absolute;grid-area:1 / 1 / 2 / 4;min-width:100%;">
+                    <div id="FEKp9Yv6xRW0HCQx" style="z-index:0;">
+                        <div id="noYFfXPBwBiUAEbH" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="VOUsAfO3PKzLoF0x" style="width:100%;opacity:1.0;height:100%;">
+                                <div id="B7sUU7C4GJZtTOOw" style="background-color:#1a1a1a;transform:scale(1, 1);overflow:hidden;width:100%;position:relative;opacity:1.0;height:100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="UYqjHagrfQ16ljvJ" style="display:grid;position:relative;grid-area:1 / 2 / 2 / 3;">
+                    <div id="EMYfL5s8NWxckaiO">
+                        <div id="O2QTCtQ1p8hcCfrW" style="display:grid;position:relative;">
+                            <div id="hqnsVI53XWxFcjNK" style="z-index:1;">
+                                <div id="pt4bK0EvZgTZ3jtk" style="padding-top:147.92993473%;transform:rotate(0deg);">
+                                    <div id="rqRfqUPKDOid3L3y" style="top:0px;left:0px;width:100%;position:absolute;height:100%;">
+                                        <svg id="jo5rNTSOuzAttd3O" viewBox="0 0 112.088 165.8117" style="overflow:hidden;top:0%;left:0%;background:url(&#x27;&#x27;);width:100%;position:absolute;opacity:1.0;height:100%;">
+                                            <g id="bSx4jwEQ6zDe2Gae" style="transform:scale(1, 1);">
+                                                <path id="Px7wy5UWTV5RZbrE" d="M0.0,0.0 L112.08800919416558,0.0 L112.08800919416558,165.81171883958265 L0.0,165.81171883958265 L0.0,0.0" style="fill:#0d203b;opacity:1.0;"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="YSsEG8TcPYQi9O41" style="z-index:2;">
+                                <div id="rih3yPKFzPAlEpDB" style="padding-top:150%;transform:rotate(0deg);">
+                                    <div id="V4dlsxSzmXDJMVC5" style="top:0px;left:0px;width:100%;position:absolute;height:100%;">
+                                        <div id="EIKPkVlzxUlzWiD7" style="width:100%;opacity:1.0;height:100%;">
+                                            <div id="y5P9p6ApXxm07OPF" style="transform:scale(1, 1);overflow:hidden;width:100%;position:relative;height:100%;">
+                                                <div id="bH32Yk1Ia1LCkTN7" style="transform:rotate(0deg);top:0%;left:0%;width:100%;position:absolute;height:100%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                                    <img src="Images/about-image.jpg" loading="lazy" style="display:block;object-fit:cover;width:100%;height:100%;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ehDgWLQKVRwvnrqq">
+                        <div id="Skx0p7Jr4b66eZef" style="display:grid;position:relative;">
+                            <div id="YPeB4ckigOYqlTVY" style="z-index:3;">
+                                <div id="iMo6ZVseXGj2MxLc" style="padding-top:75.9397805%;transform:rotate(0deg);">
+                                    <div id="gQVIFxcLQJSSwYd5" style="top:0px;left:0px;width:100%;position:absolute;height:100%;">
+                                        <svg id="uXdqmWu5tpzJFfMN" viewBox="0 0 109.8737 83.4378" style="overflow:hidden;top:0%;left:0%;background:url(&#x27;&#x27;);width:100%;position:absolute;opacity:1.0;height:100%;">
+                                            <g id="MDfTGMyWR1m9Wqgn" style="transform:scale(1, 1);">
+                                                <path id="NzgKQcGQNBccSZiy" d="M0.0,0.0 L109.87370374632829,0.0 L109.87370374632829,83.4378494565837 L0.0,83.4378494565837 L0.0,0.0" style="fill:#0d203b;opacity:1.0;"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="fuMuX2zRM0dsCGqd" style="z-index:4;">
+                                <div id="vY0jsjP3FWCjKo7n" style="padding-top:74.93128092%;transform:rotate(0deg);">
+                                    <div id="OAtUAN1KbXyt3Utw" style="top:0px;left:0px;width:100%;position:absolute;height:100%;">
+                                        <div id="KSMUUnAQosoT5vd5" style="width:100%;opacity:1.0;height:100%;">
+                                            <div id="I7jN2Ynw37tWFpDB" style="transform:scale(1, 1);overflow:hidden;width:100%;position:relative;height:100%;">
+                                                <div id="cNfHYleOpfJyycW4" style="transform:rotate(0deg);top:0%;left:0%;width:100%;position:absolute;height:100%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                                    <img src="Images/apbpjgud.png" loading="lazy" srcset="Images/apbpjgud.png 364w, Images/apbpjgud.png 728w" sizes="(max-width: 375px) 55.9368445vw, (min-width: 375.05px) and (max-width: 480px) 57.07841276vw, (min-width: 480.05px) and (max-width: 768px) 49.65842905vw, (min-width: 768.05px) and (max-width: 1024px) 37.24382179vw, (min-width: 1024.05px) 27.9192339vw" style="display:block;object-fit:cover;width:100%;height:100%;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="eYMU6g3rNFl6OxHr">
+                        <div id="eqBJHGfUT34MCfnY" style="display:grid;position:relative;">
+                            <div id="iy3mANwlm3uo5wyj" style="z-index:6;">
+                                <div id="kNS0eNNI44OpI1of" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="DJsfRWeIivW9vu2B" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <p id="FdkUAzEupqpjOhZp" style="text-transform:none;color:#ffffff;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.28571429em;">
+                                            <span id="yDLkXIe8YzKi0qoU" style="color:#ffffff;font-weight:700;">About Me</span>
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="VdZfF6NxPEvgMBmK" style="z-index:7;">
+                                <div id="R04C8HorIMQnhSRj" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="OkO8juv1nnuYUOns" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <p id="SSQQSyDPwyvfEyqe" style="color:#ffffff;font-family:YACgEUaXOJg-0;line-height:1.4em;">
+                                            <span id="Pen5evJWxBeFPtfn" style="color:#ffffff;">I&#x27;m a dual-degree student at the University of Pittsburgh, specializing in Information Science focused in Networking and Security and Digital Narrative &amp; Interactive Design, with a minor in Computer Science. I&#x27;ve honed my technical skills in various settings such as programming for object identification and exploring front-end development. My expertise spans numerous programming languages, 3D modeling, and cybersecurity. Outside of my educational pursuits, I&#x27;m an active participant in hackathons and tech organizations, always eager to innovate and collaborate with fellow tech enthusiasts.</span>
+                                        </p>
+                                        <p id="P8PHoXFjRS4elzsx" style="text-transform:none;color:#ffffff;white-space:pre;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.4em;">
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="otYSuANfv8S0F98O">
+                        <div id="vgfsA2nxWcmvy2xy" style="display:grid;position:relative;">
+                            <div id="X4b8p9M04iyIOHQn" style="display:grid;position:relative;grid-area:2 / 2 / 3 / 3;">
+                                <div id="QcB0upWHUgJCnYV8" style="z-index:9;">
+                                    <div id="Gw3gH4PBKkR1apy9" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                        <a id="pexi28dkeD12sHzX" href="/AboutMePage/about-me.html" style="pointer-events:all;">
+                                        <svg id="W8w6A7kpomeJNYJa" viewBox="0 0 335.4735 61.6046" preserveAspectRatio="none" style="overflow:hidden;top:0%;left:0%;background:url(&#x27;&#x27;);width:100%;position:absolute;opacity:1.0;height:100%;">
+                                            <g id="alKIdNGr7qBc1NNl" style="transform:scale(1, 1);">
+                                                <path id="rYqkzIisGHuqa1uI" d="M0.0,0.0 L335.47346083507654,0.0 L335.47346083507654,61.60458539711371 L0.0,61.60458539711371 L0.0,0.0" style="fill:#303b53;opacity:1.0;"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div id="SP2qJNoBDQty3Oj7" style="display:grid;position:relative;grid-area:3 / 3 / 4 / 4;">
+                                    <div id="yGkfLhuinuBnMpOi" style="z-index:10;pointer-events:none;">
+                                        <div id="yU3eUb4Yc08Z4XZE" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                            <div id="jydA8KQNTZQPho3q" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                                <p id="ImD4mG8U7sBwa3kX" style="color:#ffffff;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.08361676em;">
+                                                    <span id="hqLNUaMqN4ux8Ooe" style="color:#ffffff;"><a href="/AboutMePage/about-me.html">More About Me</a></span>
+                                                    <br>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="NEQlnNIVAeGHY44C">
+                        <div id="TJ2XIDBWPMYm3xVp" style="display:grid;position:relative;">
+                            <div id="Pj7odvwZNs4RL1MG" style="display:grid;position:relative;grid-area:2 / 2 / 3 / 3;">
+                                <div id="PVXnBJtpQeCuQ0Dp" style="z-index:13;">
+                                    <div id="aM01fZpqz01rGJHK" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                        <a id="pexi28dkeD12sHzX" href="#resume" style="pointer-events:all;">
+                                            <svg id="Sh0D8GaIjQap3oJY" viewBox="0 0 335.4735 61.6046" preserveAspectRatio="none" style="overflow:hidden;top:0%;left:0%;background:url(&#x27;&#x27;);width:100%;position:absolute;opacity:1.0;height:100%;">
+                                                <g id="Nh8AM6A12sa8RwZf" style="transform:scale(1, 1);">
+                                                    <path id="v2nXW5aDNNM2KR4t" d="M0.0,0.0 L335.47346083507614,0.0 L335.47346083507614,61.60458539711371 L0.0,61.60458539711371 L0.0,0.0" style="fill:#303b53;opacity:1.0;"></path>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="mw4bIdwVDLpwsSVy" style="display:grid;position:relative;grid-area:3 / 3 / 4 / 4;">
+                                    <div id="URj4UyqkA5JPELMI" style="z-index:14;pointer-events:none;">
+                                        <div id="cYtyO9MRjPeUs1ty" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                            <div id="S1uk8pu2GlsMgTG2" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                                <p id="l8Rv7uhbiyKpf55e" style="color:#ffffff;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.08361676em;">
+                                                    <span id="B7zs1V4DQf68OnNK" style="color:#ffffff;">Resume <a href="#resume"></a></span>
+                                                    <br>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="projects" style="z-index:0;overflow:hidden;grid-template-columns:auto 100rem auto;display:grid;margin-top:-1px;position:relative;align-items:center;">
+                <div id="mjKsCkCjNqcDfzlI" style="display:grid;min-height:100%;position:absolute;grid-area:1 / 1 / 2 / 4;min-width:100%;">
+                    <div id="u7gKulMtul6LCAzC" style="z-index:0;">
+                        <div id="CjZKB8Gf55FDnWUe" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="CREEXY5TtAStC2im" style="width:100%;opacity:1.0;height:100%;">
+                                <div id="ilifNs17lurBvPH4" style="background-color:#dbd8dd;transform:scale(1, 1);overflow:hidden;width:100%;position:relative;opacity:1.0;height:100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="lG0cntjMDbyjNmod" style="display:grid;position:relative;grid-area:1 / 2 / 2 / 3;">
+                    <div id="C1NBZT007KHzIQQ6" style="z-index:15;">
+                        <div id="yvrjf30aljjJTx1A" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="PAm2osOwC5hSw7Ho" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                <p id="KGMvaYX0PD5N5HPv" style="text-transform:none;color:#141414;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.39285714em;">
+                                    <span id="o9A09qTWTKlcQsuW" style="color:#141414;font-weight:700;">Recent Projects</span>
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="OkZyHB5NQZUp67zD" style="z-index:3;">
+                        <div id="SSUK8KqobfdcYdt1" style="padding-top:71.27210382%;transform:rotate(0deg);">
+                            <div id="r6ooiy5tHQm7tpDB" style="top:0px;left:0px;width:100%;position:absolute;height:100%;">
+                                <div id="WuFTlBMRYajQURzQ" style="width:100%;opacity:1.0;height:100%;">
+                                    <div id="aWTBSAhu9QJvqchu" class="video_container" style="transform:scale(1, 1);overflow:hidden;width:100%;position:relative;height:100%;">
+                                        <div id="M9MVRZe9gdsl2xct" style="transform:rotate(0deg);top:-2.61525616%;left:0%;width:100%;position:absolute;height:105.23051233%;opacity:1.0;">
+                                            <video src="Images/Model.gif" playsinline="" poster="Images/Model.gif" preload="none" data-volume="0.0" autoplay="" muted="" loop="" style="display:block;object-fit:cover;width:100%;height:100%;"></video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fofeFewbwu4FrdGS">
+                        <div id="JSEv7Jd1FXN4p5HY" style="display:grid;position:relative;">
+                            <div id="GOyoSrN20vSqLDId" style="z-index:1;">
+                                <div id="nUBhiRx2IX35RO35" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <a id="Nsz1EJIsMNb75d77" target="_blank" rel="noopener" href="https://github.com/LoganWarren" style="pointer-events:all;">
+                                        <svg id="rvHnbLtLFvNLTxDv" viewBox="0 0 393.6984 64.1835" preserveAspectRatio="none" style="overflow:hidden;top:0%;left:0%;background:url(&#x27;&#x27;);width:100%;position:absolute;opacity:1.0;height:100%;">
+                                            <g id="BwBK8VgdjldmXS7z" style="transform:scale(1, 1);">
+                                                <path id="Jc3l26kBYIcuo5EM" d="M0.0,0.0 L393.69841335144565,0.0 L393.69841335144565,64.18345267848551 L0.0,64.18345267848551 L0.0,0.0" style="fill:#141414;opacity:1.0;"></path>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="aFr4CYDObw5lfoPV" style="z-index:2;pointer-events:none;">
+                                <div id="YJq0E2JISdGhYM5P" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="iJojDoJIRK6G0mQO" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <p id="iH9GxkvaijGBCIsF" style="color:#ffffff;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.35937712em;">
+                                            <span id="T3T1ZGehy0rKmx1I" style="color:#ffffff;font-weight:700;">ASL Model</span>
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="uTm4RMSTeKg2kG88" style="z-index:7;">
+                        <div id="BsqVxOwvB7iwMzaJ" style="padding-top:71.27210382%;transform:rotate(0deg);">
+                            <div id="dyWud9sO8KEnmzsd" style="top:0px;left:0px;width:100%;position:absolute;height:100%;">
+                                <div id="LVnaJLnVxpt1VrXr" style="width:100%;opacity:1.0;height:100%;">
+                                    <div id="xg3jpV4giomLTDl1" style="transform:scale(1, 1);overflow:hidden;width:100%;position:relative;height:100%;">
+                                        <div id="ZwBUxel7Z9jSzePv" style="transform:rotate(0deg);top:0%;left:-8.1405899%;width:116.2811798%;position:absolute;height:100%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                            <img src="Images/Nooked.PNG" loading="lazy" srcset="Images/Nooked.PNG 376w, Images/Nooked.png 627w" sizes="(max-width: 375px) 104.79070285vw, (min-width: 375.05px) and (max-width: 480px) 81.8677366vw, (min-width: 480.05px) and (max-width: 768px) 51.16733538vw, (min-width: 768.05px) and (max-width: 1024px) 38.37550153vw, (min-width: 1024.05px) 28.76757948vw" style="display:block;object-fit:cover;width:100%;height:100%;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="dt0htyY2BIpEUFwk">
+                        <div id="hINhGkk2i5qr2Zj8" style="display:grid;position:relative;">
+                            <div id="bE7BeamtUehVC7Hw" style="display:grid;position:relative;grid-area:2 / 2 / 3 / 3;">
+                                <div id="lxOAV18uDDRkWaFy" style="z-index:5;">
+                                    <div id="q8oxKJx1S1qQQoPI" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                        <svg id="B6Bqc6LsjOaomGTy" viewBox="0 0 393.6984 64.1835" preserveAspectRatio="none" style="overflow:hidden;top:0%;left:0%;background:url(&#x27;&#x27;);width:100%;position:absolute;opacity:1.0;height:100%;">
+                                            <g id="btUf1A6khm733fcM" style="transform:scale(1, 1);">
+                                                <path id="MFuiMhMl1lkvlsIR" d="M0.0,0.0 L393.69841335144554,0.0 L393.69841335144554,64.18345267848562 L0.0,64.18345267848562 L0.0,0.0" style="fill:#141414;opacity:1.0;"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div id="JHUxT0Pz3N256vjy" style="z-index:6;">
+                                    <div id="Ew94cq2vbzQ41UtN" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                        <div id="AoXXLKIB1vZsFAKq" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                            <p id="MomtyKtJTs3MmIKj" style="color:#ffffff;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.35937712em;">
+                                                <span id="fATRAoRduMAolFuL" style="color:#ffffff;font-weight:700;">Nooked Mobile App</span>
+                                                <br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="BYiaGGS5ZJbDgtsN" style="z-index:11;">
+                        <div id="wsjIeBsXRkokc6MS" style="padding-top:71.27210382%;transform:rotate(0deg);">
+                            <div id="R45n72GFFxnATSda" style="top:0px;left:0px;width:100%;position:absolute;height:100%;">
+                                <div id="vsTrvLKSHWtNY4ck" style="width:100%;opacity:1.0;height:100%;">
+                                    <div id="pW6d12Bx7ElaghIo" style="transform:scale(1, 1);overflow:hidden;width:100%;position:relative;height:100%;">
+                                        <div id="FXsGFQExSxFwZJOt" style="transform:rotate(0deg);top:0%;left:-3.45407787%;width:106.90815573%;position:absolute;height:100%;opacity:1.0;animation:pulse 1.5s ease-in-out infinite;">
+                                            THISONE<img src="images/683f95fc0809ae8d34b1ac6c8065d4b3.jpg" alt="Business Partners Discussing with Tablet" loading="lazy" style="display:block;object-fit:cover;width:100%;height:100%;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="TSuygEDzi6OOEwuC">
+                        <div id="wnpmaRaUFKUHHGTH" style="display:grid;position:relative;">
+                            <div id="l3S6EaXncJkwlOzS" style="display:grid;position:relative;grid-area:2 / 2 / 3 / 3;">
+                                <div id="fo17QMUXfmENNVsN" style="z-index:9;">
+                                    <div id="fXU29lWID4J2gRJs" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                        <svg id="Sh6ny4vnqDqOQz1x" viewBox="0 0 393.6984 65.1846" preserveAspectRatio="none" style="overflow:hidden;top:0%;left:0%;background:url(&#x27;&#x27;);width:100%;position:absolute;opacity:1.0;height:100%;">
+                                            <g id="P9Rk2j6Q8mjlqVNt" style="transform:scale(1, 1);">
+                                                <path id="FQ4QiccD9MfQLxYS" d="M0.0,0.0 L393.69841335144577,0.0 L393.69841335144577,65.18460876490536 L0.0,65.18460876490536 L0.0,0.0" style="fill:#141414;opacity:1.0;"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div id="veS39oqwBmfjLwgc" style="z-index:10;">
+                                    <div id="KY5YCZVpQLjektUx" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                        <div id="lYRZdugao1yH4Stp" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                            <p id="VYIv2DDCsMjjxeCB" style="color:#ffffff;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.35937712em;">
+                                                <span id="GikyoTTLWO12JVJT" style="color:#ffffff;font-weight:700;">Perlanton Securities</span>
+                                                <br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="IfTFLJOUbAjZbbwz">
+                        <div id="x4SINDVlMlHFvlFH" style="display:grid;position:relative;">
+                            <div id="XHDzEYeRsc3fYwXe" style="display:grid;position:relative;grid-area:2 / 2 / 3 / 3;">
+                                <div id="qZLv0NxOll4bKvMH" style="z-index:13;">
+                                    <div id="ayMog588fQR1TIYH" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                        <svg id="ijl56kWKEDEF0cAu" viewBox="0 0 25.1837 8.543" preserveAspectRatio="none" style="overflow:hidden;top:0%;left:0%;background:url(&#x27;&#x27;);width:100%;position:absolute;opacity:1.0;height:100%;">
+                                            <g id="TnqP0qRb3dpNq6OR" style="transform:scale(1, 1);">
+                                                <path id="lYDGtPm9In8AqGgU" d="M1.9753064200000001,0.0 L23.20842275,0.0 C24.29935436,0.0 25.18372917,0.8843748100000001 25.18372917,1.9753064200000001 L25.18372917,6.56766233 C25.18372917,7.09154616 24.97561713,7.5939730800000005 24.60517532,7.9644148900000005 24.2347335,8.33485671 23.73230659,8.54296875 23.20842275,8.54296875 L1.9753064200000001,8.54296875 C1.45142259,8.54296875 0.9489956700000001,8.33485671 0.57855386,7.9644149 0.20811204,7.5939730800000005 0.0,7.09154617 0.0,6.56766233 L0.0,1.9753064200000001 C0.0,1.45142259 0.20811204,0.9489956700000001 0.57855385,0.57855386 0.9489956700000001,0.20811204 1.45142258,0.0 1.9753064200000001,0.0 Z" style="fill:#1a1a1a;opacity:1.0;"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div id="qsHoVnOJk9AxrSJN" style="z-index:14;">
+                                    <div id="pQ3r1OvZRD4owSxc" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                        <div id="u1Jbzf4uz9WLKAni" style="flex-direction:column;display:flex;width:100%;justify-content:center;opacity:1.0;box-sizing:border-box;height:100%;">
+                                            <p id="lzGZSWQ2AAfsojh7" style="text-transform:none;color:#eeefee;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.36841451em;text-align:center;">
+                                                <a id="b5GL84yaELqLagRO" href="ProjectsPage/project.html" style="text-decoration-line:underline;color:#eeefee;pointer-events:all;">All Projects</a>
+                                                <br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="GrdU18AupxwEL2LR">
+                        <div id="qhTVSP01KJPl3yC0" style="display:grid;position:relative;">
+                            <div id="EHlYnB6Yug6LZ4cF" style="display:grid;position:relative;grid-area:2 / 2 / 3 / 3;">
+                                <div id="yrgpQz13DWtm3dL7" style="z-index:17;">
+                                    <div id="dCmRc3SUoMFVpxeT" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                        <svg id="m8bQfMPthtGLWXKM" viewBox="0 0 25.1837 8.543" preserveAspectRatio="none" style="overflow:hidden;top:0%;left:0%;background:url(&#x27;&#x27;);width:100%;position:absolute;opacity:1.0;height:100%;">
+                                            <g id="CW1RbamzrTZAaU0h" style="transform:scale(1, 1);">
+                                                <path id="WpT5Qpm3ljHka4me" d="M1.9753064200000001,0.0 L23.20842275,0.0 C24.29935436,0.0 25.18372917,0.8843748100000001 25.18372917,1.9753064200000001 L25.18372917,6.56766233 C25.18372917,7.09154616 24.97561713,7.5939730800000005 24.60517532,7.9644148900000005 24.2347335,8.33485671 23.73230659,8.54296875 23.20842275,8.54296875 L1.9753064200000001,8.54296875 C1.45142259,8.54296875 0.9489956700000001,8.33485671 0.57855386,7.9644149 0.20811204,7.5939730800000005 0.0,7.09154617 0.0,6.56766233 L0.0,1.9753064200000001 C0.0,1.45142259 0.20811204,0.9489956700000001 0.57855385,0.57855386 0.9489956700000001,0.20811204 1.45142258,0.0 1.9753064200000001,0.0 Z" style="fill:#1a1a1a;opacity:1.0;"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div id="fBZPFsln6DWc3ojf" style="z-index:18;">
+                                    <div id="eEv6syYOsqnuDZQm" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                        <div id="xQ9fVvOGWKkKaHdG" style="flex-direction:column;display:flex;width:100%;justify-content:center;opacity:1.0;box-sizing:border-box;height:100%;">
+                                            <p id="MUyKE1DqpVDrl7SH" style="text-transform:none;color:#eeefee;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.36841451em;text-align:center;">
+                                                <span id="xP7Dn8Ady0uVKTmN" style="text-decoration-line:underline;color:#eeefee;"><a target="_blank" rel="noopener" href="https://github.com/LoganWarren">GitHub</a></span>
+                                                <br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="resume" style="z-index:0;overflow:hidden;grid-template-columns:auto 100rem auto;display:grid;margin-top:-1px;position:relative;align-items:center;">
+                <div id="S2eownnxRqJe07oV" style="display:grid;min-height:100%;position:absolute;grid-area:1 / 1 / 2 / 4;min-width:100%;">
+                    <div id="eWYDvCAERQjBgXDe" style="z-index:0;">
+                        <div id="IHsfj4vSddeijAAo" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="S6IouoR6fUTQp0Ot" style="width:100%;opacity:1.0;height:100%;">
+                                <div id="pSp4OBg60r34fJvQ" style="background-color:#141414;transform:scale(1, 1);overflow:hidden;width:100%;position:relative;opacity:1.0;height:100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="qUJSe71fZWDMAfmC" style="display:grid;position:relative;grid-area:1 / 2 / 2 / 3;">
+                    <div id="BSEyudKhlH3EdbMd" style="z-index:2;">
+                        <div id="Seg03FJnFRTJmalb" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="s9qyLV5g1uUv3wIV" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                <p id="Ln01hPDfbuHO2MfK" style="text-transform:none;color:#ffffff;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.28571429em;">
+                                    <span id="WvHblAYYfockuxGP" style="color:#ffffff;font-weight:700;">Resume</span>
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="QP6OfL6AxMKwmw0N" style="z-index:1;">
+                        <div id="t6ZWdslxlXwkIF6n" style="padding-top:113.63636364%;transform:rotate(0deg);">
+                            <div id="GAUoedeZNN4OOviV" style="top:0px;left:0px;width:100%;position:absolute;height:100%;">
+                                <div id="tfxwSulFijh1LSWt" style="width:100%;opacity:1.0;height:100%;">
+                                    <div id="scb8c5KEadJ2kMIH" style="transform:scale(1, 1);overflow:hidden;width:100%;position:relative;height:100%;">
+                                        <div id="X1vZjEKQsFRgfTt5" style="transform:rotate(0deg);top:0%;left:0%;width:100%;position:absolute;height:100%;opacity:1.0;">
+                                            <img src="Images/PaperIcon.png" alt="cv  resume  profile  staff  employee" style="display:block;object-fit:cover;width:100%;height:100%;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="GL6u1NhcFYAnlNbS" style="z-index:3;">
+                        <div id="r4X23f0Aes7WSjbL" style="padding-top:0.54904403%;transform:rotate(0deg);">
+                            <div id="tYaM05GBga4bKug6" style="top:0px;left:0px;width:100%;position:absolute;height:100%;">
+                                <svg id="CLIU75Yfuofb7Slf" viewBox="0 0 1092.807320631957 5.999993301037904" preserveAspectRatio="none" style="overflow:visible;background:url(&#x27;&#x27;);display:block;width:100%;min-height:1px;fill:#ffffff;opacity:1.0;stroke:#ffffff;height:100%;">
+                                    <g id="PfDmahsVeRJ7Kypm">
+                                        <path d="M0.0036603159783226147,3.999996650518966 L1092.803660315979,1.9999966505189093" style="stroke-width:4px;fill:none;stroke-linecap:butt;"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="FbsyqQauPUHy1xB1">
+                        <div id="eiWcQmtevknpugVH" style="display:grid;position:relative;">
+                            <div id="lE52u6ucY4s9DQe6" style="z-index:6;">
+                                <div id="j6aa0hADHuFYng5l" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="cWbVwKXAVWR6QMph" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <p id="BQ7FeKo9Y2GBVqDA" style="text-transform:none;color:#ffffff;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.27173775em;">
+                                            <span id="uhGo3Xupybh7u91Z" style="text-decoration-line:underline;color:#ffffff;font-weight:700;">EDUCATION</span>
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="bLIOtb6CuWhgZc40" style="z-index:5;">
+                                <div id="YrsXuAWL4r1IRrIp" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="uK6N3ATmjTqcUWUp" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <p id="m43AvyR0KmjER9mI" style="color:#dbd8dd;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                            <span id="BPgSvEQyldW7EcfA" style="color:#dbd8dd;font-weight:700;">University of Pittsburgh (Currently Pursuing):</span>
+                                        </p>
+                                        <ul id="idcTyahhcEXut2rU">
+                                            <li id="MfVo1kz7MwNXkXqp" style="margin-left:1.7em;color:#dbd8dd;list-style-type:disc;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                                <span id="ELxmHCCzF6yUVDhj" style="color:#dbd8dd;">Bachelor of Science in Information Science - Concentration in Networking and Security, and a Bachelor of Science in Digital Narrative and Interactive Design, with a Minor in Computer Science.</span>
+                                                <br>
+                                            </li>
+                                        </ul>
+                                        <p id="X20KZewaWEycDNnh" style="color:#dbd8dd;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                            <span id="iKC3CFF8lAqJQNty" style="color:#dbd8dd;font-weight:700;">Smithson Valley High School:</span>
+                                        </p>
+                                        <ul id="a0Zql6N8XGSxpYWW">
+                                            <li id="UGLDygzcJOUAukxb" style="margin-left:1.7em;color:#dbd8dd;list-style-type:disc;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                                <span id="FZnBJK8Y5zMWNYZo" style="color:#dbd8dd;">Graduated May 2022 - Top 10% - GPA 3.7, National Honor Society</span>
+                                                <br>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="RL3fZWZOq083Wbs9" style="z-index:8;">
+                                <div id="BPlij9cMAoRB2z25" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="oCC38XYqm6QwaETl" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <p id="lpc43KPWAU6NRzuI" style="text-transform:none;color:#ffffff;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.27173775em;">
+                                            <span id="Z0fHXbYJ4HYw5ALX" style="text-decoration-line:underline;color:#ffffff;font-weight:700;">RECENT EXPERIENCE</span>
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ngwtf9qy4T3FjaE2" style="z-index:7;">
+                                <div id="eqUDAe9ZEoHKOSeO" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="nvAudG8gRzzU5uEh" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <p id="YT5Meaqraxa50eA8" style="color:#dbd8dd;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                            <span id="C0eQyageVPr5lggM" style="color:#dbd8dd;font-weight:700;">Chili&#x27;s Grill &amp; Bar:</span>
+                                        </p>
+                                        <p id="HnJmDnydueXmEUs5" style="color:#dbd8dd;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                            <span id="FOXPAltkz9GN4xp0" style="color:#dbd8dd;">Server</span>
+                                            <br>
+                                        </p>
+                                        <ul id="nFrk72wHRxb0ejDN">
+                                            <li id="knRmm9Ceig5kBe8C" style="margin-left:1.7em;color:#dbd8dd;list-style-type:disc;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                                <span id="cdA7plavOy5N2Iie" style="color:#dbd8dd;">Managed a section of the restaurant, took orders, and assisted customers and kitchen staff.</span>
+                                                <br>
+                                            </li>
+                                        </ul>
+                                        <p id="Ty7JcBMETjefkUMG" style="color:#dbd8dd;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                            <span id="RETLbxVwgeKOTLWH" style="color:#dbd8dd;font-weight:700;">Cricket Wireless:</span>
+                                        </p>
+                                        <p id="RywWvVU3wCwBdWJw" style="color:#dbd8dd;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                            <span id="BapgzqV4mfJDkW1y" style="color:#dbd8dd;">Sales Associate</span>
+                                            <br>
+                                        </p>
+                                        <ul id="ISOL5mQVYe8TsffP">
+                                            <li id="wRDLASEclxtzTvjN" style="margin-left:1.7em;color:#dbd8dd;list-style-type:disc;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                                <span id="uwsiIAfDk0FNZPHW" style="color:#dbd8dd;">Promoted products to potential buyers, and provided customer support with setting up phone plans and cellular service needs.</span>
+                                                <br>
+                                            </li>
+                                        </ul>
+                                        <p id="wPSuCSRTuoN7vwUi" style="color:#dbd8dd;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                            <span id="tcvLzAyt4lwu7LEE" style="color:#dbd8dd;font-weight:700;">Mekaworks:</span>
+                                        </p>
+                                        <p id="JOkR5RHko97gna5G" style="color:#dbd8dd;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                            <span id="J96vePa0Ikwi8GjH" style="color:#dbd8dd;">Data Analyst Intern</span>
+                                            <br>
+                                        </p>
+                                        <ul id="HoI26CfgrneBoyXe">
+                                            <li id="oZQ409ErksA33TF2" style="margin-left:1.7em;color:#dbd8dd;list-style-type:disc;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                                <span id="OgBSe02BLhHQ5GXM" style="color:#dbd8dd;">Programmed robots for object identification. Assisted the team in engineering and designing robots for local commercial use</span>
+                                                <br>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="sap9lxOuY5gF6ekJ" style="z-index:10;">
+                                <div id="NUz68JnZWs46JwXc" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="aR61tkF4TxYPga4q" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <p id="XQ9sKagfWb7x0r2x" style="text-transform:uppercase;color:#ffffff;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.27173775em;">
+                                            <span id="pxx4YMJcMtIgKooY" style="text-decoration-line:underline;color:#ffffff;font-weight:700;">Licenses\Certifications</span>
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="dkYEgrTerVhACTKg" style="z-index:9;">
+                                <div id="ASembUBXLkRSJpMi" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="XFAZeJe47P2VloxJ" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <p id="wi1w9ccbvHSZLsxC" style="color:#dbd8dd;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                            <span id="yCq0a2mUt0ZfoIzg" style="color:#dbd8dd;font-weight:700;">LinkedIn:</span>
+                                        </p>
+                                        <ul id="lD8tGxFEmPQ5Zlzd">
+                                            <li id="dJvJdcaiqsIxAQXh" style="margin-left:1.7em;color:#dbd8dd;list-style-type:disc;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                                <span id="yWLU7h72obWLHB5c" style="color:#dbd8dd;">Programming Foundations: Databases (2020)</span>
+                                                <br>
+                                            </li>
+                                            <li id="c8nXcf7hPPB64hWT" style="margin-left:1.7em;color:#dbd8dd;list-style-type:disc;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                                <span id="fLwoRg1em2VVjej7" style="color:#dbd8dd;">Strategic Thinking (2020)</span>
+                                                <br>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="LrqlZ9mxcBgq2T65" style="z-index:11;">
+                                <div id="EPF2Uv70HDWulBfc" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="tUUJ6w3ZJeA0n8QL" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <p id="vTGLIQBOsOxUd3cG" style="text-transform:uppercase;color:#ffffff;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.27173775em;">
+                                            <span id="pqoUzRhATD0Jmcad" style="text-decoration-line:underline;color:#ffffff;font-weight:700;">Publications</span>
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="nCaFb55ZJwojygMy" style="z-index:12;">
+                                <div id="Tr1vWl1ookfcKEan" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="tmWxWw2l6XtASsWp" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <p id="e75dpoO95ID8Fsf8" style="color:#dbd8dd;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                            <span id="NiPoHAKSd32CGWDm" style="color:#dbd8dd;">L.W (2023). Optimizing Bus Route</span>
+                                        </p>
+                                        <p id="XgTvdTFl5priUJcX" style="color:#dbd8dd;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                            <span id="tQzVi7BrhSWi4uxR" style="color:#dbd8dd;">Selection... arXiv:2305.01896.</span>
+                                            <br>
+                                        </p>
+                                        <p id="auQNNXZ4vKMDXyc0" style="color:#dbd8dd;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                            <a id="S90FOJS9EMQ7qm6l" target="_blank" rel="noopener" href="https://arxiv.org/abs/2305.01896" style="text-decoration-line:underline;color:#dbd8dd;pointer-events:all;">https://arxiv.org/abs/2305.01896</a>
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="MTqEQySMDUbRfjZ3" style="z-index:14;">
+                                <div id="O1AcSrVrAtwx3fT2" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="jVGSzKSkp9mYjn9y" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <p id="zz8wjnLQg3tc6osB" style="text-transform:uppercase;color:#ffffff;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.27173775em;">
+                                            <span id="CRFCfjYtnupoF3Wp" style="text-decoration-line:underline;color:#ffffff;font-weight:700;">Skills</span>
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="c8uYdy0MeBBUlnD1" style="z-index:13;">
+                                <div id="BpniLTL9dlzmUuXk" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="g31NYkhkSTdmIJnr" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <ul id="neMrfUIqVb0K3Mun">
+                                            <li id="MXHQ5e6EARHzTW1X" style="margin-left:1.7em;color:#dbd8dd;list-style-type:disc;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                                <span id="t3daZvNcllxr0wDO" style="color:#dbd8dd;">Programming</span>
+                                                <br>
+                                            </li>
+                                            <ul id="mAcaZIecDlNKtVH1">
+                                                <li id="R73FHRoZa4p3kkLx" style="margin-left:3.4em;color:#dbd8dd;list-style-type:circle;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                                    <span id="BpNpM9JEmoQYdkDY" style="color:#dbd8dd;">Java, Python, HTML/CSS, R, JavaScript</span>
+                                                    <br>
+                                                </li>
+                                            </ul>
+                                            <li id="OJpYNZCi93CgRSEJ" style="margin-left:1.7em;color:#dbd8dd;list-style-type:disc;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                                <span id="xlt5yR0tfNHp5kjQ" style="color:#dbd8dd;">Front-end Developing</span>
+                                                <br>
+                                            </li>
+                                            <li id="WG7PS2AurjgVS4sq" style="margin-left:1.7em;color:#dbd8dd;list-style-type:disc;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                                <span id="n3lRLiIeruFiruq7" style="color:#dbd8dd;">3D Modeling/Printing</span>
+                                                <br>
+                                            </li>
+                                            <li id="tRHqjf8JD9owVJ13" style="margin-left:1.7em;color:#dbd8dd;list-style-type:disc;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                                <span id="eLp4Ivwydj3zI0gK" style="color:#dbd8dd;">Cybersecurity</span>
+                                                <br>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="ieXP6Lmb3VSXuz1b" style="z-index:16;">
+                                <div id="hZxc2gGYRSw9zfkS" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="cn7wILxgLwv6u96x" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <p id="LGom26dlVMo8bNVy" style="text-transform:uppercase;color:#ffffff;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.27173775em;">
+                                            <span id="YSL04qmxRiBSs6W3" style="text-decoration-line:underline;color:#ffffff;font-weight:700;">Organizations</span>
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="FZelkQYCBNkaUbSf" style="z-index:15;">
+                                <div id="o3B6sxlOlSDMqhWG" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="r2Gaq1yFA8WjyJVr" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <p id="TgdJpybzc3JmWSZg" style="color:#dbd8dd;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                            <span id="s2dewYbo7x1pdp28" style="color:#dbd8dd;">CSC - Pitt Computer Science Club</span>
+                                        </p>
+                                        <p id="iF4EF5x38JRE5EXm" style="color:#dbd8dd;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                            <span id="BvbDSsZvGez5si2b" style="color:#dbd8dd;">OASIS - Pitt Information Science Club</span>
+                                            <br>
+                                        </p>
+                                        <p id="J5iyys9QojjmPjWT" style="color:#dbd8dd;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                            <span id="QjaSXAcDekECsq9A" style="color:#dbd8dd;">RAS - Robotics and Automation Society</span>
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="LkLWSuUB36oCmZks" style="z-index:18;">
+                                <div id="pxAbZDSUeAHAOSma" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="mvad9v5ftHtOy9rt" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <p id="xlb1JD39zHvuRE58" style="text-transform:uppercase;color:#ffffff;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.27173775em;">
+                                            <span id="penlw0SQcdKMVJ2w" style="text-decoration-line:underline;color:#ffffff;font-weight:700;">Honors\Awards</span>
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="JREPblw11WsLDzJj" style="z-index:17;">
+                                <div id="rAoZjTTZdFv9Ns2a" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                                    <div id="d4tXjDNJouRhGja3" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                        <ul id="Gto0Cjmn734LT6op">
+                                            <li id="lG0jS2LqubGnRRcE" style="margin-left:1.7em;color:#dbd8dd;list-style-type:disc;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                                <span id="IB6WU0bu1udGfoyI" style="color:#dbd8dd;">First Place Overall Winner in STEELHACKS 2023 Hackathon</span>
+                                                <br>
+                                            </li>
+                                            <li id="YIKE65O2GPJTPuej" style="margin-left:1.7em;color:#dbd8dd;list-style-type:disc;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                                <span id="HlThP2kAX4MLBDvl" style="color:#dbd8dd;">Recipient of USAA Collegiate Scholarship</span>
+                                                <br>
+                                            </li>
+                                            <li id="bgkeqpgsbSPN3Hwy" style="margin-left:1.7em;color:#dbd8dd;list-style-type:disc;font-family:YAFLd8sKbwc-2;line-height:1.37499427em;">
+                                                <span id="PwMxlhWjIY2eGIeT" style="color:#dbd8dd;">Platinum and Gold ranking in CyberPatriots competitions</span>
+                                                <br>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" style="z-index:0;overflow:hidden;grid-template-columns:auto 100rem auto;display:grid;margin-top:-1px;position:relative;align-items:center;">
+                <div id="scXT93aIdm9sMsb4" style="display:grid;min-height:100%;position:absolute;grid-area:1 / 1 / 2 / 4;min-width:100%;">
+                    <div id="ySU21FjtF0idZfil" style="z-index:0;">
+                        <div id="z1GeBNry2WkuHITw" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="lrYdazIgQpdh2JVc" style="width:100%;opacity:1.0;height:100%;">
+                                <div id="RAwq9vEmWXvKozZP" style="background-color:#dbd8dd;transform:scale(1, 1);overflow:hidden;width:100%;position:relative;opacity:1.0;height:100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="cVECi7DrhLMPCeP0" style="display:grid;position:relative;grid-area:1 / 2 / 2 / 3;">
+                    <div id="dC8dVsSf9HIzJZ9U" style="z-index:7;">
+                        <div id="USAVx77YDTpqw1Mi" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="Fp8QhB5iQKnunadG" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                <p id="IujjuiuC0isMtXoa" style="margin-left:0em;text-transform:none;color:#000000;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.28571429em;direction:ltr;text-align:center;">
+                                    <span id="HJrIBKhI8jtu1ahU" style="text-decoration-line:underline;color:#000000;font-weight:700;">Contact Information</span>
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="DCimKfOWey4WlwCi" style="z-index:8;">
+                        <div id="L28UUgTlBPebaQNr" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="RExK8AwCi2OsYdjJ" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                <p id="IfBEuKX2ngSaEeYw" style="margin-left:0em;text-transform:none;color:#000000;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.28571429em;direction:ltr;text-align:center;">
+                                    <span id="OZajcHaiyGea9jlL" style="text-decoration-line:underline;color:#000000;font-weight:700;">Links</span>
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="DX0GwVy3wdiaYQqS" style="z-index:2;">
+                        <div id="WGW2j8KyNiiEPvtz" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="ZMhDYjcWCCbo2MpN" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                <p id="ODQr0FENUV0zB10b" style="color:#000000;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.35734323em;">
+                                    <span id="HoSgBGb0hN3BaxXZ" style="color:#000000;font-weight:700;">Location</span>
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="WeTAyI4P3ZmN37r0" style="z-index:10;">
+                        <div id="mV0tiLC3vx3OEKUS" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="sjCL0LQcRPMLSfxU" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                <p id="RbvX2u4CJ3lXf0RD" style="color:#000000;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.35734323em;">
+                                    <span id="rzaVAEX05N7XnCPS" style="color:#000000;font-weight:700;">LinkedIn</span>
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bDbSAYN8M5ZRr7oF" style="z-index:1;">
+                        <div id="yk5WRUlzUcAZiT6B" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="TSzRNS5Ws4N5NYzJ" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                <p id="lOWYrJrdT6Nx4QwC" style="text-transform:none;color:#0d203b;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.37543699em;">
+                                    <span id="ZfJTLxKCRZwaLggx" style="color:#0d203b;">Pittsburgh, PA</span>
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="WSG7Vb4DOfvmih9d" style="z-index:9;">
+                        <div id="RxU7csECRb3p0gm3" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="cSRFhzU3htyGmtny" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                <p id="Lb0EJCsx6zjoHNT8" style="text-transform:none;color:#0d203b;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.37543699em;">
+                                    <a id="ZdXDs88aypR2bUzg" target="_blank" rel="noopener" href="https://www.linkedin.com/in/logan-warren-2232371a8/" style="text-decoration-line:underline;color:#0d203b;pointer-events:all;">https://www.linkedin.com/in/logan-warren-2232371a8/</a>
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="TLWBqNhzgpEkvhc2" style="z-index:3;">
+                        <div id="TPqRiEnNN7fq2Tls" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="sQEZHRGeL1B0ZTNA" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                <p id="Hb89WhBxeKcLaba7" style="margin-left:0em;text-transform:none;color:#000000;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.35733709em;direction:ltr;text-align:left;">
+                                    <span id="wWkPa6xPLDK9eiwV" style="text-decoration-line:none;color:#000000;font-weight:700;font-style:normal;">Phone Number</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="UxyDo6To8rQmlpAS" style="z-index:11;">
+                        <div id="TQWYRKSAgFitYHdr" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="BR8NKXjwvwUxGNhA" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                <p id="YhhxOfmShxMBxPpx" style="margin-left:0em;text-transform:none;color:#000000;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.35733709em;direction:ltr;text-align:left;">
+                                    <span id="SgzEI6iaW1DDPWds" style="color:#000000;font-weight:700;">GitHub</span>
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Pkv7rfZAUy0XCL4h" style="z-index:6;">
+                        <div id="HOEh2WtPWmMhbeL1" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="T0egD4yOMsclrYcK" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                <p id="szWVabOEASmjUb86" style="margin-left:0em;text-transform:none;color:#0d203b;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.37543699em;direction:ltr;text-align:left;">
+                                    <span id="uPn0aIhKfe44dooe" style="color:#0d203b;">(210) - 364 - 9506</span>
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="HivAI5kpvc0tPJFn" style="z-index:14;">
+                        <div id="ylmx9KoFy2mo3E1l" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="bcH5IlvUJ6eqepCh" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                <p id="BOMwrMrKgzuaHqAE" style="margin-left:0em;text-transform:none;color:#0d203b;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.37543699em;direction:ltr;text-align:left;">
+                                    <a id="CL5RRXcmgupfMEcy" target="_blank" rel="noopener" href="https://github.com/LoganWarren" style="text-decoration-line:underline;color:#0d203b;pointer-events:all;">https://github.com/LoganWarren</a>
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="A1La2KXtnH6sNpw5" style="z-index:4;">
+                        <div id="k9RZtzIplRPje6cA" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="p7haIejYifEuRfgV" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                <p id="PhpgZ4umZ9KX6MJK" style="margin-left:0em;text-transform:none;color:#000000;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.35733709em;direction:ltr;text-align:left;">
+                                    <span id="rjMimHTiPniBqpAO" style="text-decoration-line:none;color:#000000;font-weight:700;font-style:normal;">Email Address</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="O76QYjy8TVGmjra4" style="z-index:12;">
+                        <div id="AFaPpPHOgGwqJnrq" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="w57sOzyee6N4zcLg" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                <p id="OFMoEUyImX1uM4l4" style="margin-left:0em;text-transform:none;color:#000000;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.35733709em;direction:ltr;text-align:left;">
+                                    <span id="MX8B1UJQFLkzB5rm" style="color:#000000;font-weight:700;">Devpost</span>
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="RK8RLwXtLww6y4m2" style="z-index:5;">
+                        <div id="Uwd9iZYRUMxel7PV" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="d3VUS9HyyP7CTdOW" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                <p id="sTEGvf0gi2yEoOgR" style="margin-left:0em;text-transform:none;color:#0d203b;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.37543699em;direction:ltr;text-align:left;">
+                                    <span id="pBFCIjrtljsqUaUB" style="color:#0d203b;">
+                                        <a>Loganwcollege@gmail.com</a>
+                                    </span>
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mkW7OxUI0reDRds8" style="z-index:13;">
+                        <div id="CRBGbAt2q1J69NUW" style="transform:rotate(0deg);width:100%;box-sizing:border-box;height:100%;">
+                            <div id="NTXzfIJgFGJ4RcMs" style="flex-direction:column;display:flex;width:100%;justify-content:flex-start;opacity:1.0;box-sizing:border-box;height:100%;">
+                                <p id="y50TFDwbHwNXAU0X" style="margin-left:0em;text-transform:none;color:#0d203b;letter-spacing:0em;font-family:YACgEUaXOJg-0;line-height:1.37543699em;direction:ltr;text-align:left;">
+                                    <a id="IQdwZHA5oLJ1hDkL" target="_blank" rel="noopener" href="https://devpost.com/LoganWarren" style="text-decoration-line:underline;color:#0d203b;pointer-events:all;">https://devpost.com/LoganWarren</a>
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+            <script src="js/3c8f31c6e47494ce55846efa10e7b35d3847fa5999b2eef847adb495e3092bba.js" async="" nonce="7cd70cb1-9bbb-4871-87ab-dcb6d2507953"></script>
+            <script src="js/73ad2651535b7ecadd366d5fa045dc32c1cdb8fc38f8243601b62b64f4123420.js" async="" nonce="7cd70cb1-9bbb-4871-87ab-dcb6d2507953"></script>
+            <script src="js/1074ae737e5ec243ce9a503e2bc61fd919e4f9de01105d8c36a3b7222fd99aeb.js" async="" nonce="7cd70cb1-9bbb-4871-87ab-dcb6d2507953"></script>
         </div>
-        <div class="footer-right">
-            <p>&copy; 2023 Logan Warren. All rights reserved.</p>
-        </div>
-    </footer>
-    
-    <script>
-        const backToTopButton = document.getElementById("backToTop");
-        
-        window.onscroll = () => {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                backToTopButton.style.display = "block";
-            } else {
-                backToTopButton.style.display = "none";
-            }
-        };
-    
-        backToTopButton.onclick = () => {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        };
-    </script>
-    
-</body>
+    </body>
 </html>
